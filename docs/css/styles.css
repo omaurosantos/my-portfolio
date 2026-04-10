@@ -511,6 +511,90 @@ header {
   margin-bottom: 4rem;
 }
 
+.timeline-section {
+  margin-bottom: 4rem;
+}
+
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding-left: 1.25rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.35rem;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  width: 2px;
+  background: linear-gradient(180deg, var(--primary), var(--accent));
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -0.02rem;
+  top: 0.55rem;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 6px rgba(0, 168, 232, 0.12);
+}
+
+.timeline-content {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.timeline-period {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-role {
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.8rem;
+}
+
+.timeline-list {
+  list-style: none;
+  margin-top: 0.9rem;
+}
+
+.timeline-list li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.7rem;
+  color: var(--text-muted);
+}
+
+.timeline-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.75rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -636,6 +720,14 @@ footer .social-links a:hover {
 
   .sobre-mim-grid {
     grid-template-columns: 1fr;
+  }
+
+  .timeline {
+    padding-left: 1rem;
+  }
+
+  .timeline-item {
+    padding-left: 1.25rem;
   }
 
   .cta-banner {
