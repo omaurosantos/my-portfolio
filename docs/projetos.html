@@ -38,16 +38,31 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
+    <script src="js/theme-toggle.js" defer></script>
   </head>
   <body>
     <header>
       <nav class="navbar">
         <a class="logo" href="index.html" aria-label="Página inicial de Mauro Santos">MS</a>
-        <ul class="nav-links">
-          <li><a href="index.html">Início</a></li>
-          <li><a href="projetos.html" class="active">Projetos</a></li>
-          <li><a href="sobre.html">Sobre</a></li>
-        </ul>
+        <div class="nav-controls">
+          <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="projetos.html" class="active">Projetos</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+          </ul>
+          <button
+            type="button"
+            class="theme-toggle"
+            data-theme-toggle
+            aria-label="Alternar tema do site"
+            aria-pressed="false"
+          >
+            <span class="theme-toggle-icon" data-theme-toggle-icon>
+              <i class="fa-solid fa-moon"></i>
+            </span>
+            <span class="theme-toggle-label" data-theme-toggle-label>Modo escuro</span>
+          </button>
+        </div>
       </nav>
     </header>
 

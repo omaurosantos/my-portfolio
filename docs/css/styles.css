@@ -12,6 +12,39 @@
   --radius-lg: 22px;
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   --font-body: "Poppins", "Segoe UI", sans-serif;
+  --bg-main: linear-gradient(180deg, #f6fbff 0%, #f1faee 100%);
+  --bg-accent: radial-gradient(circle at top left, rgba(0, 168, 232, 0.14), transparent 30%);
+  --text-main: #1d3557;
+  --text-muted: #6c757d;
+  --header-bg: rgba(241, 250, 238, 0.85);
+  --card-bg: rgba(255, 255, 255, 0.88);
+  --card-border: rgba(255, 255, 255, 0.8);
+  --section-muted-bg: rgba(255, 255, 255, 0.55);
+  --tag-bg: rgba(0, 126, 167, 0.1);
+  --button-secondary-border: rgba(29, 53, 87, 0.12);
+  --footer-bg: #1d3557;
+  --footer-text: #f1faee;
+}
+
+html[data-theme="dark"] {
+  --dark: #f3f7ff;
+  --light: #0b1524;
+  --white: #132235;
+  --gray: #9fb0c4;
+  --surface: #18293d;
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  --bg-main: linear-gradient(180deg, #08111d 0%, #0f1c2d 100%);
+  --bg-accent: radial-gradient(circle at top left, rgba(0, 168, 232, 0.18), transparent 30%);
+  --text-main: #f3f7ff;
+  --text-muted: #9fb0c4;
+  --header-bg: rgba(8, 17, 29, 0.86);
+  --card-bg: rgba(19, 34, 53, 0.9);
+  --card-border: rgba(159, 176, 196, 0.14);
+  --section-muted-bg: rgba(10, 22, 36, 0.45);
+  --tag-bg: rgba(0, 168, 232, 0.16);
+  --button-secondary-border: rgba(159, 176, 196, 0.24);
+  --footer-bg: #08111d;
+  --footer-text: #e7f0fb;
 }
 
 * {
@@ -26,10 +59,8 @@ html {
 
 body {
   font-family: var(--font-body);
-  background:
-    radial-gradient(circle at top left, rgba(0, 168, 232, 0.14), transparent 30%),
-    linear-gradient(180deg, #f6fbff 0%, #f1faee 100%);
-  color: var(--dark);
+  background: var(--bg-accent), var(--bg-main);
+  color: var(--text-main);
   line-height: 1.7;
   display: flex;
   flex-direction: column;
@@ -113,7 +144,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(241, 250, 238, 0.85);
+  background: var(--header-bg);
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 10px rgba(29, 53, 87, 0.05);
 }
@@ -130,7 +161,7 @@ header {
 .logo {
   font-weight: 700;
   font-size: 1.5rem;
-  color: var(--dark);
+  color: var(--text-main);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -148,10 +179,50 @@ header {
 }
 
 .nav-links a {
-  color: var(--dark);
+  color: var(--text-main);
   font-weight: 500;
   position: relative;
   padding-bottom: 0.5rem;
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid var(--button-secondary-border);
+  background: var(--card-bg);
+  color: var(--text-main);
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+  font: inherit;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 10px 24px rgba(29, 53, 87, 0.08);
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  color: var(--text-main);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.theme-toggle-icon {
+  font-size: 0.95rem;
+}
+
+.theme-toggle-label {
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .nav-links a::after {
@@ -186,8 +257,8 @@ header {
   gap: 4rem;
   flex-wrap: wrap-reverse;
   max-width: 1100px;
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 32px;
   box-shadow: 0 20px 50px rgba(29, 53, 87, 0.1);
   padding: 2.5rem;
@@ -201,12 +272,12 @@ header {
 .hero-text p {
   font-size: 1.1rem;
   margin-bottom: 1.2rem;
-  color: var(--gray);
+  color: var(--text-muted);
   max-width: 560px;
 }
 
 .hero-highlight {
-  color: var(--dark);
+  color: var(--text-main);
   font-size: 1.2rem;
   font-weight: 500;
 }
@@ -220,7 +291,7 @@ header {
 
 .hero-badges span {
   padding: 0.45rem 0.85rem;
-  background: rgba(0, 126, 167, 0.1);
+  background: var(--tag-bg);
   color: var(--accent);
   border: 1px solid rgba(0, 126, 167, 0.12);
   border-radius: 999px;
@@ -254,13 +325,13 @@ header {
 
 .btn-secondary {
   background: transparent;
-  color: var(--dark);
-  border: 1px solid rgba(29, 53, 87, 0.12);
+  color: var(--text-main);
+  border: 1px solid var(--button-secondary-border);
   box-shadow: none;
 }
 
 .btn-secondary:hover {
-  color: var(--dark);
+  color: var(--text-main);
   box-shadow: 0 6px 20px rgba(29, 53, 87, 0.12);
 }
 
@@ -271,7 +342,7 @@ header {
 
 .social-links a {
   font-size: 1.8rem;
-  color: var(--dark);
+  color: var(--text-main);
   margin-left: 1rem;
 }
 
@@ -289,7 +360,7 @@ header {
 }
 
 .section-muted {
-  background: rgba(255, 255, 255, 0.55);
+  background: var(--section-muted-bg);
 }
 
 .home-grid,
@@ -303,10 +374,11 @@ header {
 .info-card,
 .summary-card,
 .value-card {
-  background: var(--white);
+  background: var(--card-bg);
   border-radius: var(--radius-lg);
   padding: 1.6rem;
   box-shadow: var(--shadow);
+  border: 1px solid var(--card-border);
 }
 
 .card-label {
@@ -372,9 +444,10 @@ header {
 }
 
 .card-projeto {
-  background: var(--white);
+  background: var(--card-bg);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  border: 1px solid var(--card-border);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -404,7 +477,7 @@ header {
 }
 
 .card-content p {
-  color: var(--gray);
+  color: var(--text-muted);
   font-size: 0.95rem;
   flex-grow: 1;
 }
@@ -446,16 +519,17 @@ header {
 
 .skills-section {
   margin-bottom: 1.5rem;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--card-bg);
   padding: 1.2rem;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
+  border: 1px solid var(--card-border);
 }
 
 .skills-section h4 {
   margin-bottom: 0.75rem;
   font-weight: 600;
-  color: var(--dark);
+  color: var(--text-main);
 }
 
 .sobre-hobby h3 {
@@ -487,11 +561,14 @@ header {
 
 .area-identificacao {
   margin-top: 2rem;
-  background-color: #fdfdfd;
+  background-color: var(--card-bg);
   border-left: 4px solid var(--primary);
   padding: 1.2rem 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-top: 1px solid var(--card-border);
+  border-right: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
 }
 
 .area-identificacao h3 {
@@ -500,8 +577,8 @@ header {
 
 /* === FOOTER === */
 footer {
-  background: var(--dark);
-  color: var(--light);
+  background: var(--footer-bg);
+  color: var(--footer-text);
   padding: 1.5rem;
   margin-top: auto;
 }
@@ -517,7 +594,7 @@ footer {
 }
 
 footer .social-links a {
-  color: var(--light);
+  color: var(--footer-text);
 }
 
 footer .social-links a:hover {
@@ -533,6 +610,12 @@ footer .social-links a:hover {
   .navbar {
     flex-direction: column;
     gap: 1rem;
+  }
+
+  .nav-controls {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .hero-content {
