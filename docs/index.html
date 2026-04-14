@@ -90,9 +90,10 @@
   <body>
     <header>
       <nav class="navbar">
-        <a class="logo" href="#" aria-label="Voltar ao topo">MS</a>
+        <a class="logo" href="#topo" aria-label="Voltar ao topo">MS</a>
         <div class="nav-controls">
           <ul class="nav-links">
+            <li><a href="#topo" data-section="topo">Início</a></li>
             <li><a href="#projetos" data-section="projetos">Projetos</a></li>
             <li><a href="#sobre" data-section="sobre">Sobre</a></li>
           </ul>
@@ -112,67 +113,68 @@
       </nav>
     </header>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-content">
-        <div class="hero-text">
-          <p class="eyebrow">Produto, tecnologia e execução orientada a valor</p>
-          <h1>Mauro Santos</h1>
-          <p class="hero-highlight">
-            Analista de Produto com atuação em discovery, priorização e conexão
-            entre negócio, experiência do usuário e tecnologia.
-          </p>
-          <p>
-            Hoje atuo na Qeevo ajudando a transformar necessidades de negócio em
-            soluções claras. Meu foco está em organizar contexto, facilitar
-            decisões e apoiar entregas com impacto.
-          </p>
-          <div class="hero-badges">
-            <span>Analista de Produto</span>
-            <span>Product Owner</span>
-            <span>Discovery & Backlog</span>
-            <span>Tecnologia + Negócio</span>
-          </div>
-          <div class="hero-actions">
-            <a href="#projetos" class="btn">Meus Projetos</a>
-            <a href="#sobre" class="btn btn-secondary">Ver Perfil</a>
-            <div class="social-links">
-              <a
-                href="https://github.com/omaurosantos/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub de Mauro Santos"
-              >
-                <i class="fa-brands fa-github"></i>
-              </a>
-              <a
-                href="https://linkedin.com/in/omaurosantos"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn de Mauro Santos"
-              >
-                <i class="fa-brands fa-linkedin"></i>
-              </a>
+    <main>
+      <!-- HERO -->
+      <section id="topo" class="hero">
+        <div class="hero-content">
+          <div class="hero-text">
+            <p class="eyebrow">Produto, tecnologia e execução orientada a valor</p>
+            <h1>Mauro Santos</h1>
+            <p class="hero-highlight">
+              Analista de Produto com atuação em discovery, priorização e conexão
+              entre negócio, experiência do usuário e tecnologia.
+            </p>
+            <p>
+              Hoje atuo na Qeevo ajudando a transformar necessidades de negócio em
+              soluções claras. Meu foco está em organizar contexto, facilitar
+              decisões e apoiar entregas com impacto.
+            </p>
+            <div class="hero-badges">
+              <span>Analista de Produto</span>
+              <span>Product Owner</span>
+              <span>Discovery & Backlog</span>
+              <span>Tecnologia + Negócio</span>
+            </div>
+            <div class="hero-actions">
+              <a href="#projetos" class="btn">Meus Projetos</a>
+              <a href="#sobre" class="btn btn-secondary">Ver Perfil</a>
+              <div class="social-links">
+                <a
+                  href="https://github.com/omaurosantos/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub de Mauro Santos"
+                >
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a
+                  href="https://linkedin.com/in/omaurosantos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn de Mauro Santos"
+                >
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </div>
             </div>
           </div>
+          <div class="hero-photo">
+            <img
+              src="assets/foto_mauro.png"
+              alt="Foto de Mauro Santos"
+              class="profile-pic"
+            />
+          </div>
         </div>
-        <div class="hero-photo">
-          <img
-            src="assets/foto_mauro.png"
-            alt="Foto de Mauro Santos"
-            class="profile-pic"
-          />
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- PROJETOS -->
-    <section id="projetos" class="home-section">
-      <div class="container">
-        <p class="eyebrow" style="text-align: center">Trabalhos selecionados</p>
-        <h2>Projetos</h2>
+      <!-- PROJETOS -->
+      <section id="projetos" class="home-section">
+        <div class="container">
+          <p class="eyebrow section-intro">Trabalhos selecionados</p>
+          <h2>Projetos</h2>
 
-        <div class="projetos-grid">
+          <div class="projetos-grid">
           <div class="card-projeto">
             <img src="assets/floatData.png" alt="Projeto floatData" />
             <div class="card-content">
@@ -272,13 +274,13 @@
               </div>
             </div>
           </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- SOBRE -->
-    <section id="sobre" class="home-section">
-      <div class="container">
+      <!-- SOBRE -->
+      <section id="sobre" class="home-section">
+        <div class="container">
 
         <section class="timeline-section">
           <h2>Experiência</h2>
@@ -379,19 +381,20 @@
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="home-section section-muted">
-      <div class="container cta-banner">
-        <div>
-          <p class="card-label">Contato</p>
-          <h2 style="text-align: left; margin-bottom: 0">Aberto a conexões e conversas sobre produto</h2>
         </div>
-        <a href="mailto:maurodopradosantos@gmail.com" class="btn">Falar por e-mail</a>
-      </div>
-    </section>
+      </section>
+
+      <!-- CTA -->
+      <section class="home-section section-muted">
+        <div class="container cta-banner">
+          <div>
+            <p class="card-label">Contato</p>
+            <h2 class="cta-title">Aberto a conexões e conversas sobre produto</h2>
+          </div>
+          <a href="mailto:maurodopradosantos@gmail.com" class="btn">Falar por e-mail</a>
+        </div>
+      </section>
+    </main>
 
     <footer>
       <div class="footer-content">
