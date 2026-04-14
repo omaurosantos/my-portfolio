@@ -22,10 +22,7 @@
       property="og:description"
       content="Portfólio com projetos, experiência e posicionamento profissional em produto, tecnologia e negócio."
     />
-    <meta
-      property="og:url"
-      content="https://omaurosantos.github.io/my-portfolio/"
-    />
+    <meta property="og:url" content="https://omaurosantos.github.io/my-portfolio/" />
     <meta property="og:site_name" content="Mauro Santos" />
     <meta
       property="og:image"
@@ -42,6 +39,13 @@
       content="https://omaurosantos.github.io/my-portfolio/assets/foto_mauro.png"
     />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <script>
+      (() => {
+        const savedTheme = localStorage.getItem("portfolio-theme");
+        const theme = savedTheme === "light" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
     <link rel="stylesheet" href="css/shadcn.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -76,16 +80,21 @@
         ]
       }
     </script>
+    <style>
+      /* Offset para scroll com header fixo */
+      [id] {
+        scroll-margin-top: 5rem;
+      }
+    </style>
   </head>
   <body>
     <header>
       <nav class="navbar">
-        <a class="logo" href="index.html" aria-label="Página inicial de Mauro Santos">MS</a>
+        <a class="logo" href="#" aria-label="Voltar ao topo">MS</a>
         <div class="nav-controls">
           <ul class="nav-links">
-            <li><a href="index.html" class="active">Início</a></li>
-            <li><a href="projetos.html">Projetos</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="#projetos" data-section="projetos">Projetos</a></li>
+            <li><a href="#sobre" data-section="sobre">Sobre</a></li>
           </ul>
           <button
             type="button"
@@ -95,15 +104,16 @@
             aria-pressed="false"
           >
             <span class="theme-toggle-icon" data-theme-toggle-icon>
-              <i class="fa-solid fa-moon"></i>
+              <i class="fa-solid fa-sun"></i>
             </span>
-            <span class="theme-toggle-label" data-theme-toggle-label>Modo escuro</span>
+            <span class="theme-toggle-label" data-theme-toggle-label>Modo claro</span>
           </button>
         </div>
       </nav>
     </header>
 
-    <main class="hero">
+    <!-- HERO -->
+    <section class="hero">
       <div class="hero-content">
         <div class="hero-text">
           <p class="eyebrow">Produto, tecnologia e execução orientada a valor</p>
@@ -124,8 +134,8 @@
             <span>Tecnologia + Negócio</span>
           </div>
           <div class="hero-actions">
-            <a href="projetos.html" class="btn">Meus Projetos</a>
-            <a href="sobre.html" class="btn btn-secondary">Ver Perfil</a>
+            <a href="#projetos" class="btn">Meus Projetos</a>
+            <a href="#sobre" class="btn btn-secondary">Ver Perfil</a>
             <div class="social-links">
               <a
                 href="https://github.com/omaurosantos/"
@@ -154,74 +164,232 @@
           />
         </div>
       </div>
-    </main>
-
-    <section class="home-section">
-      <div class="container home-grid">
-        <div class="info-card">
-          <p class="card-label">Posicionamento</p>
-          <h2>Menos acadêmico, mais orientado a impacto</h2>
-          <p>
-            Este portfólio reúne experiências e projetos que mostram como eu
-            penso produto, estruturo demandas e colaboro com times para gerar
-            entregas organizadas.
-          </p>
-        </div>
-        <div class="info-card">
-          <p class="card-label">Como eu contribuo</p>
-          <ul class="feature-list">
-            <li>Traduzo necessidades de negócio em escopos claros e priorizados.</li>
-            <li>Atuo na comunicação entre stakeholders, produto e desenvolvimento.</li>
-            <li>Uso visão analítica para apoiar decisões e evolução contínua.</li>
-          </ul>
-        </div>
-      </div>
     </section>
 
-    <section class="home-section section-muted">
+    <!-- PROJETOS -->
+    <section id="projetos" class="home-section">
       <div class="container">
-        <h2>Áreas em que gero mais valor</h2>
-        <p class="section-subtitle">
-          Uma combinação de repertório técnico com visão de produto e execução.
-        </p>
-        <div class="value-grid">
-          <article class="value-card">
-            <i class="fa-solid fa-compass-drafting"></i>
-            <h3>Discovery e definição</h3>
-            <p>
-              Estruturo problemas, levanto contexto e ajudo a transformar
-              necessidades em iniciativas compreensíveis para o time.
-            </p>
-          </article>
-          <article class="value-card">
-            <i class="fa-solid fa-layer-group"></i>
-            <h3>Backlog e priorização</h3>
-            <p>
-              Organizo demandas com foco em valor, clareza de escopo e
-              alinhamento entre urgência, impacto e capacidade de execução.
-            </p>
-          </article>
-          <article class="value-card">
-            <i class="fa-solid fa-people-arrows"></i>
-            <h3>Negócio e tecnologia</h3>
-            <p>
-              Facilito a comunicação entre áreas para reduzir ruído, acelerar
-              entendimento e melhorar a qualidade das decisões.
-            </p>
-          </article>
+        <p class="eyebrow" style="text-align: center">Trabalhos selecionados</p>
+        <h2>Projetos</h2>
+
+        <div class="projetos-grid">
+          <div class="card-projeto">
+            <img src="assets/floatData.png" alt="Projeto floatData" />
+            <div class="card-content">
+              <h3>floatData</h3>
+              <p>
+                Dispositivo de monitoramento GPS com app Android para exibição de
+                dados em tempo real. Atuei como Scrum Master e no Design System,
+                ajudando a organizar o trabalho do time e a consistência da
+                interface.
+              </p>
+              <div class="tech-tags">
+                <span>Android</span><span>GPS</span><span>Scrum</span
+                ><span>Figma</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-projeto">
+            <img src="assets/projeto_rfid.jpg" alt="Projeto RFID" />
+            <div class="card-content">
+              <h3>Controle de Estoque com RFID</h3>
+              <p>
+                Solução de controle de estoque utilizando tecnologia RFID para
+                leitura automática de produtos. Atuei no desenvolvimento e na
+                documentação técnica, contribuindo para estruturar uma solução
+                funcional e bem comunicada.
+              </p>
+              <div class="tech-tags">
+                <span>RFID</span><span>Arduino</span><span>Automação</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-projeto">
+            <img src="assets/abp2.png" alt="V. Analytics" />
+            <div class="card-content">
+              <h3>V. Analytics</h3>
+              <p>
+                Ferramenta de gestão para equipes de Geoprocessamento com controle
+                de demandas, histórico de atividades e relatórios. Atuei no
+                front-end, apoiando a construção de uma experiência mais clara
+                para uso operacional.
+              </p>
+              <div class="tech-tags">
+                <span>React</span><span>TypeScript</span><span>Front-end</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-projeto">
+            <img src="assets/abp3.png" alt="Projeto ramg.o" />
+            <div class="card-content">
+              <h3>ramg.o</h3>
+              <p>
+                Ferramenta para gestão alimentar com controle de refeições,
+                receitas e dashboard nutricional. Atuei como Desenvolvedor
+                Front-end, transformando requisitos em fluxos e telas utilizáveis.
+              </p>
+              <div class="tech-tags">
+                <span>React</span><span>TypeScript</span><span>API</span
+                ><span>ESP8266</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-projeto">
+            <img src="assets/abp1.png" alt="Site sobre Scrum" />
+            <div class="card-content">
+              <h3>Site sobre Scrum</h3>
+              <p>
+                Site informativo sobre a metodologia Scrum com módulos de ensino e
+                testes interativos. Atuei como Product Owner na definição de
+                requisitos e na comunicação com o cliente, alinhando escopo e
+                necessidades da entrega.
+              </p>
+              <div class="tech-tags">
+                <span>Scrum</span><span>HTML</span><span>CSS</span
+                ><span>JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-projeto">
+            <img src="assets/abp3.png" alt="Projeto Mentora" />
+            <div class="card-content">
+              <h3>Mentora</h3>
+              <p>
+                Plataforma de mentoria voltada para estudantes de tecnologia,
+                conectando mentores e mentorados, organizando trilhas de estudo e
+                registrando encontros. Atuei como Analista de Produto / Product
+                Owner, conduzindo discovery, priorização do backlog e alinhamento
+                com o time de desenvolvimento.
+              </p>
+              <div class="tech-tags">
+                <span>Product Discovery</span><span>Scrum</span
+                ><span>Figma</span><span>Kanban</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="home-section">
+    <!-- SOBRE -->
+    <section id="sobre" class="home-section">
+      <div class="container">
+
+        <section class="timeline-section">
+          <h2>Experiência</h2>
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <p class="timeline-period">ago/25 - atual</p>
+                <h3>Qeevo Group / Quero Educação</h3>
+                <p class="timeline-role">Product Analyst</p>
+                <p>
+                  Atuo nos marketplaces Quero Bolsa e Melhor Escola, com foco em
+                  Discovery Experience, jornada até o checkout e iniciativas
+                  orientadas por dados.
+                </p>
+                <ul class="timeline-list">
+                  <li>Priorização de iniciativas com foco em valor e experiência.</li>
+                  <li>Análises, queries e automações para apoiar decisões.</li>
+                  <li>Leitura de regras de negócio no código para aprofundar definições.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <p class="timeline-period">fev/24 - ago/25</p>
+                <h3>GasGas Motorcycles</h3>
+                <p class="timeline-role">IT Analyst</p>
+                <ul class="timeline-list">
+                  <li>E-commerce e sistemas: Magento 2 e integrações com Olist Tiny.</li>
+                  <li>Concessionárias: gestão de garantias e reembolsos com a rede de dealers.</li>
+                  <li>TI: referência para demandas internas e melhorias contínuas.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <p class="timeline-period">nov/23 - fev/24</p>
+                <h3>GasGas Motorcycles</h3>
+                <p class="timeline-role">IT Intern</p>
+                <p>
+                  Suporte interno, tratamento de incidentes, fotos de produtos
+                  para e-commerce e apoio a clientes B2B em demandas de baixo
+                  nível.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <div class="skills-section-wrapper">
+          <h2>Competências</h2>
+          <div class="skills-grid">
+            <div class="skills-section">
+              <h4>Produto</h4>
+              <div class="tech-tags">
+                <span>Product Discovery</span><span>Backlog</span
+                ><span>Priorização</span><span>Refinamento</span>
+              </div>
+            </div>
+            <div class="skills-section">
+              <h4>Negócio e colaboração</h4>
+              <div class="tech-tags">
+                <span>Stakeholders</span><span>Comunicação</span
+                ><span>Scrum</span><span>Kanban</span>
+              </div>
+            </div>
+            <div class="skills-section">
+              <h4>Base técnica</h4>
+              <div class="tech-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                <span>React</span><span>Java</span><span>Spring Boot</span>
+              </div>
+            </div>
+            <div class="skills-section">
+              <h4>Ferramentas & Outros</h4>
+              <div class="tech-tags">
+                <span>Git</span><span>GitHub</span><span>Figma</span
+                ><span>MongoDB</span><span>MySQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sobre-hobby">
+          <h3><i class="fa-solid fa-motorcycle"></i> Hobbies</h3>
+          <p>
+            Fora do trabalho, gosto de viajar de moto. As fotos abaixo são de uma
+            viagem pela Estrada Real, passando por Cunha-SP e Paraty-RJ.
+          </p>
+          <div class="hobby-gallery">
+            <img src="assets/viagem-moto-1.jpg" alt="Viagem de moto" />
+            <img src="assets/viagem-moto-2.jpg" alt="Viagem de moto" />
+            <img src="assets/viagem-moto-3.jpg" alt="Viagem de moto" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="home-section section-muted">
       <div class="container cta-banner">
         <div>
           <p class="card-label">Contato</p>
-          <h2>Aberto a conexões, oportunidades e conversas sobre produto</h2>
+          <h2 style="text-align: left; margin-bottom: 0">Aberto a conexões e conversas sobre produto</h2>
         </div>
-        <a href="mailto:maurodopradosantos@gmail.com" class="btn"
-          >Falar por e-mail</a
-        >
+        <a href="mailto:maurodopradosantos@gmail.com" class="btn">Falar por e-mail</a>
       </div>
     </section>
 
@@ -254,5 +422,29 @@
         </div>
       </div>
     </footer>
+
+    <!-- Scroll spy: destaca o link ativo conforme a seção visível -->
+    <script>
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".nav-links a[data-section]");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              navLinks.forEach((link) => {
+                link.classList.toggle(
+                  "active",
+                  link.dataset.section === entry.target.id
+                );
+              });
+            }
+          });
+        },
+        { rootMargin: "-40% 0px -55% 0px" }
+      );
+
+      sections.forEach((section) => observer.observe(section));
+    </script>
   </body>
 </html>
