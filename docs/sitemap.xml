@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://omaurosantos.github.io/my-portfolio/</loc>
-  </url>
-  <url>
-    <loc>https://omaurosantos.github.io/my-portfolio/projetos.html</loc>
-  </url>
-  <url>
-    <loc>https://omaurosantos.github.io/my-portfolio/sobre.html</loc>
+    <loc>https://omaurosantos.github.io/my-portfolio/index.html</loc>
   </url>
 </urlset>
