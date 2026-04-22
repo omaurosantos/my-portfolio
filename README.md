@@ -16,3 +16,24 @@ npx serve .
 ```
 
 Acesse `http://localhost:3000`
+
+## SEO e indexação
+
+Arquivos publicados para GitHub Pages:
+
+- `docs/sitemap.xml`
+- `docs/robots.txt`
+
+Metadados configurados em `docs/index.html`:
+
+- canonical
+- Open Graph (`og:url`, `og:image`)
+- Twitter Cards
+- JSON-LD (`schema.org/Person`)
+
+Validação rápida após deploy:
+
+- `https://omaurosantos.github.io/my-portfolio/sitemap.xml`
+- `https://omaurosantos.github.io/my-portfolio/robots.txt`
+- LinkedIn Post Inspector para prévia social
+- Google Search Console para enviar sitemap e acompanhar cobertura
