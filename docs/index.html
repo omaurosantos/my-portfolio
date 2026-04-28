@@ -506,22 +506,18 @@
               <div class="case-field">
                 <span class="case-field__label">Problema</span>
                 <p class="case-field__text">
-                  Devs frequentemente esqueciam de mover tasks para o status "Functional Review"
-                  no GitHub Projects, fazendo itens subirem para produção sem validação. Quando
-                  lembravam, a notificação se perdia no barulho do canal de Slack da squad.
-                  Resultado: divergências recorrentes entre o que foi desenvolvido e o que produto
-                  e design haviam especificado.
+                  Devs esqueciam de mover tasks para "Functional Review" no GitHub Projects,
+                  ou notificavam no Slack onde a mensagem se perdia. Resultado: deploys sem
+                  validação e divergências frequentes entre o entregue e o especificado.
                 </p>
               </div>
               <div class="case-field">
                 <span class="case-field__label">Solução</span>
                 <p class="case-field__text">
-                  Como P.O., identifiquei o gargalo e construí um GitHub Actions workflow que
-                  escuta o webhook do GitHub Projects, valida se a mudança de status é para
-                  "Functional Review" e, confirmando a squad pelo ID do projeto, dispara uma
-                  mensagem padronizada no canal correto do Slack — mencionando automaticamente
-                  todos os revisores. Evangelizei os devs a adotarem o status e a equipe de
-                  design a se atentarem às notificações, centralizando o processo em um único lugar.
+                  Construí um workflow no n8n que recebe o webhook do GitHub Projects, valida
+                  a mudança de status e a squad pelo ID do projeto, e dispara uma mensagem
+                  padronizada no Slack marcando os revisores. Evangelizei devs e design para
+                  centralizarem o processo nesse fluxo.
                 </p>
               </div>
               <div class="case-field case-field--impact">
