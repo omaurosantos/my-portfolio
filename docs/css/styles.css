@@ -619,7 +619,7 @@ ul { list-style: none; }
 
 .timeline-dot {
   position: absolute;
-  left: -39px; top: 22px;
+  left: -33px; top: 22px;
   width: 12px; height: 12px;
   border-radius: 50%;
   background: var(--accent);
@@ -651,7 +651,7 @@ ul { list-style: none; }
 /* Dot menor para itens agrupados */
 .timeline-dot--sm {
   width: 8px; height: 8px;
-  left: -37px; top: 24px;
+  left: -31px; top: 24px;
   box-shadow: 0 0 0 2px var(--accent-dim);
 }
 
