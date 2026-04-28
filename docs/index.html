@@ -482,6 +482,59 @@
             </div>
           </article>
 
+          <!-- Case 3 -->
+          <article class="case-card reveal">
+            <div class="case-card__header">
+              <h3 class="case-card__name">Automação de Functional Review via GitHub + Slack</h3>
+              <span class="case-impact-badge">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                  <polyline points="17 6 23 6 23 12"/>
+                </svg>
+                Entregas aderentes ao escopo
+              </span>
+            </div>
+            <div class="case-fields">
+              <div class="case-field">
+                <span class="case-field__label">Contexto</span>
+                <p class="case-field__text">
+                  Time de produto sem QA dedicado, onde a validação funcional era responsabilidade
+                  de produto e design antes de cada deploy.
+                </p>
+              </div>
+              <div class="case-field">
+                <span class="case-field__label">Problema</span>
+                <p class="case-field__text">
+                  Devs frequentemente esqueciam de mover tasks para o status "Functional Review"
+                  no GitHub Projects, fazendo itens subirem para produção sem validação. Quando
+                  lembravam, a notificação se perdia no barulho do canal de Slack da squad.
+                  Resultado: divergências recorrentes entre o que foi desenvolvido e o que produto
+                  e design haviam especificado.
+                </p>
+              </div>
+              <div class="case-field">
+                <span class="case-field__label">Solução</span>
+                <p class="case-field__text">
+                  Como P.O., identifiquei o gargalo e construí um GitHub Actions workflow que
+                  escuta o webhook do GitHub Projects, valida se a mudança de status é para
+                  "Functional Review" e, confirmando a squad pelo ID do projeto, dispara uma
+                  mensagem padronizada no canal correto do Slack — mencionando automaticamente
+                  todos os revisores. Evangelizei os devs a adotarem o status e a equipe de
+                  design a se atentarem às notificações, centralizando o processo em um único lugar.
+                </p>
+              </div>
+              <div class="case-field case-field--impact">
+                <span class="case-field__label">Impacto</span>
+                <p class="case-field__text">
+                  Nenhuma task passou a subir para produção sem validação funcional. As entregas
+                  passaram a ser aderentes ao que produto e design especificavam, eliminando
+                  retrabalho por divergência de escopo.
+                </p>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
