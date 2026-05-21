@@ -194,7 +194,7 @@ A foto do hero tem fundo escuro; em telas ≤ 600px fica visualmente ruim. Solu�
 **GitHub:** github.com/omaurosantos
 
 **Experiências:**
-1. Product Analyst — Qeevo Group / Quero Educação (ago/2025–atual)
+1. IT Product Analyst — Qeevo Group / Quero Educação (ago/2025–mai/2026)
 2. IT Analyst — GasGas Motorcycles (fev/2024–ago/2025)
 3. IT Intern — GasGas Motorcycles (nov/2023–fev/2024)
 
