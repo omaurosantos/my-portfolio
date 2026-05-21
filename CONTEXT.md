@@ -6,7 +6,7 @@ Documento de referência para IAs e colaboradores. Descreve o que é o projeto, 
 
 ## O que é
 
-Site de portfólio pessoal de **Mauro Santos, Product Analyst**. Site estático puro (HTML + CSS + JS vanilla), sem frameworks, sem build step, publicável diretamente no GitHub Pages a partir da pasta `docs/`.
+Site de portfólio pessoal de **Mauro Santos, Product Owner**. Site estático puro (HTML + CSS + JS vanilla), sem frameworks, sem build step, publicável diretamente no GitHub Pages a partir da pasta `docs/`.
 
 **Público-alvo:** recrutadores e times de produto que avaliam candidatos.  
 **Objetivo principal:** mostrar capacidade analítica e de produto através de cases reais com impacto mensurável.
@@ -107,7 +107,7 @@ ra2581392323009/
 |----|--------|----------|
 | `#hero` | — | Nome, cargo, tagline, CTAs, social links, foto |
 | `#sobre` | Produto com visão de negócio e base técnica | Bio em 2 parágrafos + 2 info-cards (Fatec + PM3) |
-| `#experiencia` | Trajetória profissional | 3 itens: Product Analyst (Qeevo/atual), IT Analyst + IT Intern agrupados sob GasGas Motorcycles |
+| `#experiencia` | Trajetória profissional | 3 itens: Product Analyst (Qeevo), IT Analyst + IT Intern agrupados sob GasGas Motorcycles |
 | `#projetos` | Projetos da graduação | Featured card Mentora + card horizontal floatData |
 | `#cases` | Impacto real | 2 case cards: Cross Sell pós-compra (+50% receita) e Automação de reembolso (35→15 dias) |
 | `#skills` | Ferramentas e práticas | 3 categorias: Produto, Negócio & Colaboração, Base Técnica |
@@ -187,7 +187,7 @@ A foto do hero tem fundo escuro; em telas ≤ 600px fica visualmente ruim. Solu�
 ## Conteúdo atual
 
 **Pessoa:** Mauro Santos  
-**Cargo:** Product Analyst  
+**Cargo:** Product Owner  
 **Tagline:** "PM que lê código, escreve SQL e faz as perguntas que a maioria evita."  
 **E-mail:** maurodopradosantos@gmail.com  
 **LinkedIn:** linkedin.com/in/omaurosantos  
