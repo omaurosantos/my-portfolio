@@ -1,39 +1,19 @@
-# Mauro Santos — Portfólio Pessoal
+# Portfólio de Projetos - Fatec Jacareí
 
-Site estático em HTML/CSS/JS puro, publicável diretamente no GitHub Pages.
+**Aluno:** Mauro do Prado Santos </br>
+**Curso:** Desenvolvimento de Software Multiplataforma </br>
+**Turma:** 2º Semestre de 2023 </br>
 
-## Desenvolvimento local
+---
 
-Qualquer servidor estático funciona:
+**Portfólio Online**
 
-```bash
-# Python (sem instalação)
-python3 -m http.server 3000
+🔗 [Acesse o Portfólio](https://fatec-jacarei-dsm-portfolio.github.io/ra2581392323009/)
 
-# Node.js
-npx serve .
+---
 
-```
+**Vídeos de Apresentação**
 
-Acesse `http://localhost:3000`
-
-## SEO e indexação
-
-Arquivos publicados para GitHub Pages:
-
-- `docs/sitemap.xml`
-- `docs/robots.txt`
-
-Metadados configurados em `docs/index.html`:
-
-- canonical
-- Open Graph (`og:url`, `og:image`)
-- Twitter Cards
-- JSON-LD (`schema.org/Person`)
-
-Validação rápida após deploy:
-
-- `https://omaurosantos.github.io/my-portfolio/sitemap.xml`
-- `https://omaurosantos.github.io/my-portfolio/robots.txt`
-- LinkedIn Post Inspector para prévia social
-- Google Search Console para enviar sitemap e acompanhar cobertura
+🎤 2DSM - Vídeo (ainda não era necessário construir o portfólio) </br>
+🎤 4DSM - [Vídeo](https://www.youtube.com/watch?v=k0f10wmbGcw) </br>
+🎤 6DSM - [Vídeo](https://youtu.be/pbHSSaS2Ffw?is=jgUdo4OCJuAWC6ui)

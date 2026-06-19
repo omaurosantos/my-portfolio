@@ -1,902 +1,747 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR" data-theme="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mauro Santos | Product Owner em Marketplace e E-commerce</title>
-    <meta
-      name="description"
-      content="Portfólio de Mauro Santos com cases reais de discovery, priorização e decisões orientadas por dados em marketplace e e-commerce."
-    />
-    <link rel="canonical" href="https://omaurosantos.github.io/my-portfolio/" />
-    <meta name="theme-color" content="#0f1226" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mauro Santos — Product Owner</title>
+  <meta name="description" content="Portfólio de Mauro Santos, Product Owner com base técnica, foco em discovery, dados e entrega de valor.">
 
-    <!-- Open Graph -->
-    <meta
-      property="og:title"
-      content="Mauro Santos | Product Owner em Marketplace e E-commerce"
-    />
-    <meta
-      property="og:description"
-      content="Cases reais de discovery, priorização e decisões orientadas por dados para gerar impacto de negócio."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="pt_BR" />
-    <meta
-      property="og:url"
-      content="https://omaurosantos.github.io/my-portfolio/"
-    />
-    <meta
-      property="og:image"
-      content="https://omaurosantos.github.io/my-portfolio/assets/og-image-1200x630.png"
-    />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta
-      property="og:image:alt"
-      content="Card do portfólio de Mauro Santos, Product Owner"
-    />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mauro Santos — Product Owner">
+  <meta property="og:description" content="Product Owner com base técnica, foco em discovery, dados e entrega de valor.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
 
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Mauro Santos | Product Owner em Marketplace e E-commerce"
-    />
-    <meta
-      name="twitter:description"
-      content="Cases reais de discovery, priorização e decisões orientadas por dados para gerar impacto de negócio."
-    />
-    <meta
-      name="twitter:image"
-      content="https://omaurosantos.github.io/my-portfolio/assets/og-image-1200x630.png"
-    />
-    <meta
-      name="twitter:image:alt"
-      content="Card do portfólio de Mauro Santos, Product Owner"
-    />
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
 
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <!-- Anti-FOUC: aplica o tema antes do paint inicial -->
+  <script>
+    (function () {
+      var t = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-493MPFGNBE"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Ir para o topo">mauro.</a>
 
-      gtag("config", "G-493MPFGNBE");
-    </script>
+      <div class="nav-end">
+        <ul class="nav-menu" id="nav-menu" role="list">
+          <li><a href="#sobre"       class="nav-link">Sobre</a></li>
+          <li><a href="#experiencia" class="nav-link">Experiência</a></li>
+          <li class="nav-dropdown">
+            <button class="nav-link nav-dropdown__toggle" id="projects-toggle" type="button"
+                    aria-expanded="false" aria-controls="projects-menu">
+              Projetos
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                   stroke-linejoin="round" aria-hidden="true">
+                <path d="m6 9 6 6 6-6"/>
+              </svg>
+            </button>
+            <ul class="nav-dropdown__menu" id="projects-menu" role="list">
+              <li><a href="#projetos" class="nav-dropdown__link">Acadêmicos</a></li>
+              <li><a href="#cases" class="nav-dropdown__link">Profissionais</a></li>
+              <li><a href="#pessoais" class="nav-dropdown__link">Pessoais</a></li>
+            </ul>
+          </li>
+          <li><a href="#skills"      class="nav-link">Skills</a></li>
+          <li><a href="#contato"     class="nav-link nav-link--cta">Contato</a></li>
+        </ul>
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Mauro Santos",
-        "jobTitle": "Product Manager",
-        "url": "https://omaurosantos.github.io/my-portfolio/",
-        "image": "https://omaurosantos.github.io/my-portfolio/assets/profile_photo.png",
-        "description": "Product Owner com foco em discovery, priorização e decisões orientadas por dados.",
-        "sameAs": [
-          "https://github.com/omaurosantos/",
-          "https://www.linkedin.com/in/omaurosantos"
-        ]
-      }
-    </script>
+        <!-- Botão de alternância de tema -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
+          <!-- Sol — visível no modo escuro (clique para clarear) -->
+          <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round"
+               stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <!-- Lua — visível no modo claro (clique para escurecer) -->
+          <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round"
+               stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
 
-    <!-- Anti-FOUC: aplica o tema antes do paint inicial -->
-    <script>
-      (function () {
-        var t = localStorage.getItem("theme") || "dark";
-        document.documentElement.setAttribute("data-theme", t);
-      })();
-    </script>
-  </head>
-
-  <body>
-    <!-- ===================== NAVBAR ===================== -->
-    <nav class="navbar" id="navbar">
-      <div class="nav-inner">
-        <a href="#hero" class="nav-logo" aria-label="Ir para o topo">mauro.</a>
-
-        <div class="nav-end">
-          <ul class="nav-menu" id="nav-menu" role="list">
-            <li><a href="#sobre" class="nav-link">Sobre</a></li>
-            <li><a href="#experiencia" class="nav-link">Experiência</a></li>
-            <li><a href="#projetos" class="nav-link">Projetos</a></li>
-            <li><a href="#cases" class="nav-link">Cases</a></li>
-            <li><a href="#skills" class="nav-link">Skills</a></li>
-            <li>
-              <a href="#contato" class="nav-link nav-link--cta">Contato</a>
-            </li>
-          </ul>
-
-          <!-- Botão de alternância de tema -->
-          <button
-            class="theme-toggle"
-            id="theme-toggle"
-            aria-label="Alternar tema"
-          >
-            <!-- Sol — visível no modo escuro (clique para clarear) -->
-            <svg
-              class="icon-sun"
-              width="17"
-              height="17"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <circle cx="12" cy="12" r="4" />
-              <path
-                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
-              />
-            </svg>
-            <!-- Lua — visível no modo claro (clique para escurecer) -->
-            <svg
-              class="icon-moon"
-              width="17"
-              height="17"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-            </svg>
-          </button>
-
-          <button
-            class="nav-toggle"
-            id="nav-toggle"
-            aria-label="Abrir menu"
-            aria-expanded="false"
-            aria-controls="nav-menu"
-          >
-            <span class="hamburger" aria-hidden="true"></span>
-          </button>
-        </div>
+        <button class="nav-toggle" id="nav-toggle"
+                aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <main>
-      <!-- ===================== HERO ===================== -->
-      <section class="hero" id="hero">
-        <div class="hero-bg" aria-hidden="true">
-          <div class="hero-glow hero-glow--1"></div>
-          <div class="hero-glow hero-glow--2"></div>
-        </div>
+  <main>
 
-        <div class="container hero-content">
-          <div class="hero-layout">
-            <!-- Texto -->
-            <div class="hero-text">
-              <div class="hero-badge">
-                <span class="badge-dot" aria-hidden="true"></span>
-                Disponível para novas oportunidades
-              </div>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-glow hero-glow--1"></div>
+        <div class="hero-glow hero-glow--2"></div>
+      </div>
 
-              <h1 class="hero-name">Mauro Santos</h1>
-              <p class="hero-title">Product Owner</p>
-              <p class="hero-tagline">
-                Produto é decidir o que não construir.<br
-                  class="br-lg"
-                />
-              </p>
+      <div class="container hero-content">
+        <div class="hero-layout">
 
-              <div class="hero-ctas">
-                <a href="#cases" class="btn btn--primary">Ver cases</a>
-                <a href="#contato" class="btn btn--secondary">Falar comigo</a>
-              </div>
-
-              <div class="hero-socials">
-                <a
-                  href="https://github.com/omaurosantos/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="social-link"
-                  aria-label="GitHub de Mauro Santos"
-                >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                    />
-                  </svg>
-                </a>
-                <a
-                  href="https://linkedin.com/in/omaurosantos"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="social-link"
-                  aria-label="LinkedIn de Mauro Santos"
-                >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-                    />
-                    <rect x="2" y="9" width="4" height="12" />
-                    <circle cx="4" cy="4" r="2" />
-                  </svg>
-                </a>
-                <a
-                  href="mailto:maurodopradosantos@gmail.com"
-                  class="social-link"
-                  aria-label="Enviar e-mail para Mauro Santos"
-                >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    aria-hidden="true"
-                  >
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <!-- /hero-text -->
-
-            <!-- Foto -->
-            <div class="hero-photo">
-              <img
-                src="assets/profile_photo.png"
-                alt="Foto de perfil de Mauro Santos, Product Owner"
-              />
-            </div>
-          </div>
-          <!-- /hero-layout -->
-        </div>
-
-        <div class="hero-scroll" aria-hidden="true">
-          <span class="scroll-label">scroll</span>
-          <div class="scroll-line"></div>
-        </div>
-      </section>
-
-      <!-- ===================== SOBRE ===================== -->
-      <section class="section" id="sobre">
-        <div class="container">
-          <p class="section-label reveal">Sobre</p>
-          <h2 class="section-title reveal">
-            Produto com visão de negócio<br class="br-lg" />
-            e base técnica
-          </h2>
-
-          <div class="sobre-grid">
-            <div class="sobre-text reveal">
-              <p>
-                Atuo em produto digital com foco em discovery, priorização e
-                entrega de valor, transformando contextos complexos em soluções
-                orientadas por impacto.
-              </p>
-              <p>
-                Tenho experiência em produtos de marketplace e e-commerce, com
-                atuação próxima a métricas de negócio e jornadas de usuário
-                ponta a ponta.
-              </p>
-              <p>
-                Meu background técnico como IT Analyst fortalece minha visão de
-                sistemas e minha capacidade de colaborar com engenharia,
-                conectando estratégia à execução e facilitando a comunicação
-                entre produto, design e tecnologia.
-              </p>
+          <!-- Texto -->
+          <div class="hero-text">
+            <div class="hero-badge">
+              <span class="badge-dot" aria-hidden="true"></span>
+              Disponível para novas oportunidades
             </div>
 
-            <div class="sobre-cards">
-              <div class="info-card reveal">
-                <div class="info-card__icon" aria-hidden="true">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
-                  </svg>
-                </div>
-                <div>
-                  <p class="info-card__label">Formação</p>
-                  <p class="info-card__title">
-                    Desenvolvimento de Software Multiplataforma
-                  </p>
-                  <p class="info-card__sub">
-                    Fatec Jacareí &middot; ago/2023 – jun/2026
-                  </p>
-                </div>
-              </div>
-
-              <!-- Card atualizado: formação complementar -->
-              <div class="info-card reveal">
-                <div class="info-card__icon" aria-hidden="true">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-                  </svg>
-                </div>
-                <div>
-                  <p class="info-card__label">Formação complementar</p>
-                  <p class="info-card__title">Product Management</p>
-                  <p class="info-card__sub">
-                    PM3 &middot; 70 horas &middot; Concluído
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===================== EXPERIÊNCIA ===================== -->
-      <section class="section section--alt" id="experiencia">
-        <div class="container">
-          <p class="section-label reveal">Experiência</p>
-          <h2 class="section-title reveal">Trajetória profissional</h2>
-
-          <div class="timeline">
-            <div class="timeline-group reveal">
-              <p class="timeline-group__company">
-                Qeevo Group / Quero Educação
-              </p>
-
-              <article class="timeline-item timeline-item--sub">
-                <div
-                  class="timeline-dot timeline-dot--sm"
-                  aria-hidden="true"
-                ></div>
-                <div class="timeline-card">
-                  <div class="timeline-header">
-                    <div>
-                      <h3 class="timeline-role">IT Product Analyst</h3>
-                    </div>
-                    <time class="timeline-period" datetime="2025-08"
-                      >ago/2025 – maio/2026</time
-                    >
-                  </div>
-                  <p class="timeline-desc">
-                    Atuo nos marketplaces Quero Bolsa e Melhor Escola com foco
-                    em Discovery Experience, jornada até o checkout e
-                    iniciativas orientadas por dados. Responsável pela
-                    priorização de iniciativas com foco em valor e experiência,
-                    análises, queries e automações para apoiar decisões, e
-                    leitura de regras de negócio no código para aprofundar
-                    definições.
-                  </p>
-                  <div class="tag-group">
-                    <span class="tag">Product Discovery</span>
-                    <span class="tag">Data-driven</span>
-                    <span class="tag">Backlog</span>
-                    <span class="tag">SQL</span>
-                    <span class="tag">E-commerce</span>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <!-- GasGas — duas funções, empresa citada uma só vez -->
-            <div class="timeline-group reveal">
-              <p class="timeline-group__company">GasGas Motorcycles</p>
-
-              <article class="timeline-item timeline-item--sub">
-                <div
-                  class="timeline-dot timeline-dot--sm"
-                  aria-hidden="true"
-                ></div>
-                <div class="timeline-card">
-                  <div class="timeline-header">
-                    <div>
-                      <h3 class="timeline-role">IT Analyst</h3>
-                    </div>
-                    <time class="timeline-period" datetime="2024-02"
-                      >fev/2024 – ago/2025</time
-                    >
-                  </div>
-                  <p class="timeline-desc">
-                    Gestão de e-commerce e sistemas com Magento 2 e integrações
-                    com Olist Tiny. Responsável pela gestão de garantias e
-                    reembolsos com a rede de dealers e referência para demandas
-                    internas de TI e melhorias contínuas.
-                  </p>
-                  <div class="tag-group">
-                    <span class="tag">Magento 2</span>
-                    <span class="tag">E-commerce</span>
-                    <span class="tag">Integrações</span>
-                    <span class="tag">Olist Tiny</span>
-                  </div>
-                </div>
-              </article>
-
-              <article class="timeline-item timeline-item--sub">
-                <div
-                  class="timeline-dot timeline-dot--sm"
-                  aria-hidden="true"
-                ></div>
-                <div class="timeline-card">
-                  <div class="timeline-header">
-                    <div>
-                      <h3 class="timeline-role">IT Intern</h3>
-                    </div>
-                    <time class="timeline-period" datetime="2023-11"
-                      >nov/2023 – fev/2024</time
-                    >
-                  </div>
-                  <p class="timeline-desc">
-                    Suporte interno, tratamento de incidentes, fotos de produtos
-                    para e-commerce e apoio a clientes B2B em demandas de baixo
-                    nível.
-                  </p>
-                  <div class="tag-group">
-                    <span class="tag">Suporte TI</span>
-                    <span class="tag">E-commerce</span>
-                    <span class="tag">B2B</span>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===================== PROJETOS ACADÊMICOS ===================== -->
-      <section class="section" id="projetos">
-        <div class="container">
-          <p class="section-label reveal">Acadêmico</p>
-          <h2 class="section-title reveal">Projetos da graduação</h2>
-
-          <!-- Featured -->
-          <article class="project-featured reveal">
-            <span class="featured-badge">Destaque acadêmico</span>
-            <div class="project-featured__body">
-              <div class="project-featured__main">
-                <h3 class="project-featured__name">Mentora</h3>
-                <p class="project-featured__role">Product Owner</p>
-                <p class="project-featured__desc">
-                  App que calcula predição de desempenho de alunos e chance de
-                  evasão com base em dados comportamentais. Plataforma com
-                  dashboard para professores e instituições acompanharem a saúde
-                  acadêmica de sua base de alunos, segmentando por curso,
-                  período e professores.
-                </p>
-                <div class="project-featured__contrib">
-                  <span class="contrib-label">Contribuição</span>
-                  <p>
-                    Condução de discovery, priorização do backlog e alinhamento
-                    com o time de desenvolvimento.
-                  </p>
-                </div>
-              </div>
-              <div class="project-featured__tags">
-                <span class="tag tag--accent">Product Owner</span>
-                <span class="tag tag--accent">Discovery</span>
-                <span class="tag tag--accent">Backlog</span>
-                <span class="tag tag--accent">Mentoria</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- floatData — card horizontal secundário -->
-          <article class="project-card-h reveal">
-            <div class="project-card-h__main">
-              <div class="project-card-h__top">
-                <h3 class="project-card-h__name">floatData</h3>
-                <span class="project-card__role-pill">Scrum Master</span>
-              </div>
-              <p class="project-card-h__desc">
-                Dispositivo de monitoramento GPS com app Android para exibição
-                de dados em tempo real.
-              </p>
-            </div>
-            <div class="project-card-h__meta">
-              <p class="project-card__contrib">
-                Organização do trabalho do time e apoio na consistência da
-                interface.
-              </p>
-              <div class="tag-group">
-                <span class="tag">Scrum</span>
-                <span class="tag">Design System</span>
-                <span class="tag">GPS</span>
-                <span class="tag">Android</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- ===================== CASES REAIS ===================== -->
-      <section class="section section--alt" id="cases">
-        <div class="container">
-          <p class="section-label reveal">Cases</p>
-          <h2 class="section-title reveal">Impacto real</h2>
-
-          <div class="cases-list">
-            <!-- Case 1 -->
-            <article class="case-card reveal">
-              <div class="case-card__header">
-                <h3 class="case-card__name">Cross Sell de pós-compra</h3>
-                <span class="case-impact-badge">
-                  <svg
-                    width="13"
-                    height="13"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    aria-hidden="true"
-                  >
-                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-                    <polyline points="17 6 23 6 23 12" />
-                  </svg>
-                  +50% receita incremental
-                </span>
-              </div>
-              <div class="case-fields">
-                <div class="case-field">
-                  <span class="case-field__label">Contexto</span>
-                  <p class="case-field__text">
-                    Marketplace de educação com baixa penetração de produtos
-                    complementares após a compra.
-                  </p>
-                </div>
-                <div class="case-field">
-                  <span class="case-field__label">Problema</span>
-                  <p class="case-field__text">
-                    Taxa de cross-sell praticamente inexistente, receita por
-                    pedido estagnada e oportunidades desperdiçadas no
-                    pós-compra.
-                  </p>
-                </div>
-                <div class="case-field">
-                  <span class="case-field__label">Solução</span>
-                  <p class="case-field__text">
-                    Implementação de fluxo de cross-sell pós-compra com
-                    recomendações contextualizadas, bundles dinâmicos e
-                    automações de engajamento.
-                  </p>
-                </div>
-                <div class="case-field case-field--impact">
-                  <span class="case-field__label">Impacto</span>
-                  <p class="case-field__text">
-                    Aumento de 50% na receita incremental de cross-sell em 3
-                    meses.
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <!-- Case 2 -->
-            <article class="case-card reveal">
-              <div class="case-card__header">
-                <h3 class="case-card__name">Automação do fluxo de reembolso</h3>
-                <span class="case-impact-badge">
-                  <svg
-                    width="13"
-                    height="13"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    aria-hidden="true"
-                  >
-                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-                    <polyline points="17 6 23 6 23 12" />
-                  </svg>
-                  35 → 15 dias de reembolso
-                </span>
-              </div>
-              <div class="case-fields">
-                <div class="case-field">
-                  <span class="case-field__label">Contexto</span>
-                  <p class="case-field__text">
-                    Processo de reembolso inteiramente manual com tempo médio de
-                    35 dias e alto volume de chamados.
-                  </p>
-                </div>
-                <div class="case-field">
-                  <span class="case-field__label">Problema</span>
-                  <p class="case-field__text">
-                    Insatisfação do cliente, alto custo operacional e falta de
-                    rastreabilidade no processo de reembolso.
-                  </p>
-                </div>
-                <div class="case-field">
-                  <span class="case-field__label">Solução</span>
-                  <p class="case-field__text">
-                    Reestruturação end-to-end do fluxo com regras de negócio
-                    automatizadas, validação automática e notificações proativas
-                    ao cliente.
-                  </p>
-                </div>
-                <div class="case-field case-field--impact">
-                  <span class="case-field__label">Impacto</span>
-                  <p class="case-field__text">
-                    Redução do tempo de reembolso de 35 para 15 dias e queda
-                    significativa nos chamados de suporte.
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <!-- Case 3 -->
-            <article class="case-card reveal">
-              <div class="case-card__header">
-                <h3 class="case-card__name">
-                  Automação de Functional Review via GitHub + Slack
-                </h3>
-                <span class="case-impact-badge">
-                  <svg
-                    width="13"
-                    height="13"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    aria-hidden="true"
-                  >
-                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-                    <polyline points="17 6 23 6 23 12" />
-                  </svg>
-                  Entregas aderentes ao escopo
-                </span>
-              </div>
-              <div class="case-fields">
-                <div class="case-field">
-                  <span class="case-field__label">Contexto</span>
-                  <p class="case-field__text">
-                    Time de produto sem QA dedicado, onde a validação funcional
-                    era responsabilidade de produto e design antes de cada
-                    deploy.
-                  </p>
-                </div>
-                <div class="case-field">
-                  <span class="case-field__label">Problema</span>
-                  <p class="case-field__text">
-                    Devs esqueciam de mover tasks para "Functional Review" no
-                    GitHub Projects, ou notificavam no Slack onde a mensagem se
-                    perdia. Resultado: deploys sem validação e divergências
-                    frequentes entre o entregue e o especificado.
-                  </p>
-                </div>
-                <div class="case-field">
-                  <span class="case-field__label">Solução</span>
-                  <p class="case-field__text">
-                    Construí um workflow no n8n que recebe o webhook do GitHub
-                    Projects, valida a mudança de status e a squad pelo ID do
-                    projeto, e dispara uma mensagem padronizada no Slack
-                    marcando os revisores. Evangelizei devs e design para
-                    centralizarem o processo nesse fluxo.
-                  </p>
-                </div>
-                <div class="case-field case-field--impact">
-                  <span class="case-field__label">Impacto</span>
-                  <p class="case-field__text">
-                    Nenhuma task passou a subir para produção sem validação
-                    funcional. As entregas passaram a ser aderentes ao que
-                    produto e design especificavam, eliminando retrabalho por
-                    divergência de escopo.
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===================== SKILLS ===================== -->
-      <section class="section" id="skills">
-        <div class="container">
-          <p class="section-label reveal">Skills</p>
-          <h2 class="section-title reveal">Ferramentas e práticas</h2>
-
-          <div class="skills-grid">
-            <div class="skills-cat reveal">
-              <div class="skills-cat__header skills-cat__header--produto">
-                <svg
-                  width="17"
-                  height="17"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                  <path d="M2 17l10 5 10-5" />
-                  <path d="M2 12l10 5 10-5" />
-                </svg>
-                <span>Produto</span>
-              </div>
-              <div class="skills-list">
-                <span class="skill-pill skill-pill--produto"
-                  >Product Discovery</span
-                >
-                <span class="skill-pill skill-pill--produto">Backlog</span>
-                <span class="skill-pill skill-pill--produto">Priorização</span>
-                <span class="skill-pill skill-pill--produto">Refinamento</span>
-                <span class="skill-pill skill-pill--produto"
-                  >Product Owner</span
-                >
-              </div>
-            </div>
-
-            <div class="skills-cat reveal">
-              <div class="skills-cat__header skills-cat__header--negocio">
-                <svg
-                  width="17"
-                  height="17"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
-                <span>Negócio &amp; Colaboração</span>
-              </div>
-              <div class="skills-list">
-                <span class="skill-pill skill-pill--negocio">Stakeholders</span>
-                <span class="skill-pill skill-pill--negocio">Comunicação</span>
-                <span class="skill-pill skill-pill--negocio">Scrum</span>
-                <span class="skill-pill skill-pill--negocio">Kanban</span>
-              </div>
-            </div>
-
-            <div class="skills-cat reveal">
-              <div class="skills-cat__header skills-cat__header--tech">
-                <svg
-                  width="17"
-                  height="17"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <polyline points="16 18 22 12 16 6" />
-                  <polyline points="8 6 2 12 8 18" />
-                </svg>
-                <span>Base Técnica</span>
-              </div>
-              <div class="skills-list">
-                <span class="skill-pill skill-pill--tech">PostgreSQL</span>
-                <span class="skill-pill skill-pill--tech">MySQL</span>
-                <span class="skill-pill skill-pill--tech">React</span>
-                <span class="skill-pill skill-pill--tech">TypeScript</span>
-                <span class="skill-pill skill-pill--tech">Git / GitHub</span>
-                <span class="skill-pill skill-pill--tech">Figma</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===================== CONTATO ===================== -->
-      <section class="section section--alt contact" id="contato">
-        <div class="container">
-          <div class="contact-inner">
-            <p class="section-label reveal">Contato</p>
-            <h2 class="contact-title reveal">Vamos conversar?</h2>
-            <p class="contact-text reveal">
-              Procuro times de produto com cultura de discovery, onde análise
-              técnica e visão de negócio andam juntas. Se você acha que faz
-              sentido, me chama.
+            <h1 class="hero-name">Mauro Santos</h1>
+            <p class="hero-title">Product Owner</p>
+            <p class="hero-tagline">
+              Product Owner com base técnica, foco em discovery, dados e entrega de valor.
             </p>
-            <div class="contact-actions reveal">
-              <a
-                href="mailto:maurodopradosantos@gmail.com"
-                class="btn btn--primary"
-              >
-                Enviar e-mail
-              </a>
-              <a
-                href="https://linkedin.com/in/omaurosantos"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn--secondary"
-                >LinkedIn</a
-              >
-              <a
-                href="https://github.com/omaurosantos/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn--ghost"
-                >GitHub</a
-              >
+
+            <div class="hero-ctas">
+              <a href="#projetos" class="btn btn--primary">Ver projetos</a>
+              <a href="#contato" class="btn btn--secondary">Falar comigo</a>
             </div>
-            <a
-              href="mailto:maurodopradosantos@gmail.com"
-              class="contact-email reveal"
-              >maurodopradosantos@gmail.com</a
-            >
+
+            <div class="hero-socials">
+              <a href="https://github.com/omaurosantos/" target="_blank" rel="noopener noreferrer"
+                 class="social-link" aria-label="GitHub de Mauro Santos">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </svg>
+              </a>
+              <a href="https://linkedin.com/in/omaurosantos" target="_blank" rel="noopener noreferrer"
+                 class="social-link" aria-label="LinkedIn de Mauro Santos">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                </svg>
+              </a>
+            </div>
+          </div><!-- /hero-text -->
+
+          <!-- Foto -->
+          <div class="hero-photo">
+            <img src="assets/profile_photo.png"
+                 alt="Foto de perfil de Mauro Santos, Product Owner" />
+          </div>
+
+        </div><!-- /hero-layout -->
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <span class="scroll-label">scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ===================== SOBRE ===================== -->
+    <section class="section" id="sobre">
+      <div class="container">
+        <p class="section-label reveal">Sobre</p>
+        <h2 class="section-title reveal">
+          Produto com visão de negócio<br class="br-lg"> e base técnica
+        </h2>
+
+        <div class="sobre-grid">
+          <div class="sobre-text reveal">
+            <p>
+              Atuo em produto digital com foco em discovery, priorização e entrega de valor, transformando contextos 
+              complexos em soluções orientadas por impacto.
+            </p>
+            <p>
+              Tenho experiência em produtos de marketplace e e-commerce, com atuação próxima a métricas de negócio e 
+              jornadas de usuário ponta a ponta.
+            </p>
+            <p>
+              Meu background técnico como IT Analyst fortalece minha visão de sistemas e minha capacidade de colaborar 
+              com engenharia, conectando estratégia à execução e facilitando a comunicação entre produto, design e tecnologia.
+            </p>
+          </div>
+
+          <div class="sobre-cards">
+            <div class="info-card reveal">
+              <div class="info-card__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+              </div>
+              <div>
+                <p class="info-card__label">Formação</p>
+                <p class="info-card__title">Desenvolvimento de Software Multiplataforma</p>
+                <p class="info-card__sub">Fatec Jacareí &middot; ago/2023 – jun/2026</p>
+              </div>
+            </div>
+
+            <!-- Card atualizado: formação complementar -->
+            <div class="info-card reveal">
+              <div class="info-card__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="info-card__label">Formação complementar</p>
+                <p class="info-card__title">Product Management</p>
+                <p class="info-card__sub">PM3 &middot; 70 horas &middot; Concluído</p>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
-    </main>
-
-    <!-- ===================== FOOTER ===================== -->
-    <footer class="footer">
-      <div class="container footer-inner">
-        <span class="footer-logo">mauro.</span>
-        <p class="footer-copy">
-          &copy; 2026 Mauro Santos &mdash; Todos os direitos reservado
-        </p>
       </div>
-    </footer>
+    </section>
 
-    <script src="js/script.js"></script>
-  </body>
+    <!-- ===================== EXPERIÊNCIA ===================== -->
+    <section class="section section--alt" id="experiencia">
+      <div class="container">
+        <p class="section-label reveal">Experiência</p>
+        <h2 class="section-title reveal">Trajetória profissional</h2>
+
+        <div class="timeline">
+
+          <div class="timeline-group reveal">
+            <p class="timeline-group__company">Qeevo Group / Quero Educação</p>
+
+            <article class="timeline-item timeline-item--sub">
+              <div class="timeline-dot timeline-dot--sm" aria-hidden="true"></div>
+              <div class="timeline-card">
+                <div class="timeline-header">
+                  <div>
+                    <h3 class="timeline-role">Product Analyst</h3>
+                  </div>
+                  <time class="timeline-period" datetime="2025-08">ago/2025 – mai/2026</time>
+                </div>
+                <p class="timeline-desc">
+                  Atuei nos marketplaces Quero Bolsa e Melhor Escola com foco em Discovery
+                  Experience, jornada até o checkout e iniciativas orientadas por dados.
+                  Fui responsável pela priorização de iniciativas com foco em valor e experiência,
+                  análises, queries e automações para apoiar decisões, e leitura de regras de
+                  negócio no código para aprofundar definições.
+                </p>
+                <div class="tag-group">
+                  <span class="tag">Product Discovery</span>
+                  <span class="tag">Data-driven</span>
+                  <span class="tag">Backlog</span>
+                  <span class="tag">SQL</span>
+                  <span class="tag">E-commerce</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- GasGas — duas funções, empresa citada uma só vez -->
+          <div class="timeline-group reveal">
+            <p class="timeline-group__company">GasGas Motorcycles</p>
+
+            <article class="timeline-item timeline-item--sub">
+              <div class="timeline-dot timeline-dot--sm" aria-hidden="true"></div>
+              <div class="timeline-card">
+                <div class="timeline-header">
+                  <div>
+                    <h3 class="timeline-role">IT Analyst</h3>
+                  </div>
+                  <time class="timeline-period" datetime="2024-02">fev/2024 – ago/2025</time>
+                </div>
+                <p class="timeline-desc">
+                  Gestão de e-commerce e sistemas com Magento 2 e integrações com Olist Tiny.
+                  Responsável pela gestão de garantias e reembolsos com a rede de dealers e
+                  referência para demandas internas de TI e melhorias contínuas.
+                </p>
+                <div class="tag-group">
+                  <span class="tag">Magento 2</span>
+                  <span class="tag">E-commerce</span>
+                  <span class="tag">Integrações</span>
+                  <span class="tag">Olist Tiny</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-item timeline-item--sub">
+              <div class="timeline-dot timeline-dot--sm" aria-hidden="true"></div>
+              <div class="timeline-card">
+                <div class="timeline-header">
+                  <div>
+                    <h3 class="timeline-role">IT Intern</h3>
+                  </div>
+                  <time class="timeline-period" datetime="2023-11">nov/2023 – fev/2024</time>
+                </div>
+                <p class="timeline-desc">
+                  Suporte interno, tratamento de incidentes, fotos de produtos para e-commerce
+                  e apoio a clientes B2B em demandas de baixo nível.
+                </p>
+                <div class="tag-group">
+                  <span class="tag">Suporte TI</span>
+                  <span class="tag">E-commerce</span>
+                  <span class="tag">B2B</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJETOS ACADÊMICOS ===================== -->
+    <section class="section" id="projetos">
+      <div class="container">
+        <p class="section-label reveal">Projetos</p>
+        <h2 class="section-title reveal">Acadêmicos</h2>
+
+        <p class="section-intro reveal">
+          ABPs desenvolvidos no curso de Desenvolvimento de Software Multiplataforma, em ordem decrescente do semestre mais recente para o primeiro projeto.
+        </p>
+
+        <div class="academic-projects">
+          <article class="academic-card reveal">
+            <div class="academic-card__header">
+              <span class="academic-card__semester">6DSM · 1º semestre de 2026</span>
+              <span class="project-card__role-pill">Acadêmico</span>
+            </div>
+            <h3 class="academic-card__name">ProconBot</h3>
+            <p class="academic-card__desc">
+              Chatbot no WhatsApp para sanar dúvidas de consumidores no contexto do Procon de
+              Jacareí, combinando fluxos determinísticos e RAG. Inclui plataforma web para
+              monitoramento de agendamentos e conversas recentes.
+            </p>
+            <div class="academic-card__field academic-card__field--impact">
+              <span class="academic-card__label">Atuação</span>
+              <p>Product Owner e desenvolvedor, com implementação dos fluxos determinísticos, RAG e integração com whatsapp-web.js.</p>
+            </div>
+            <div class="academic-card__tech">
+              <span class="academic-card__label">Tecnologias utilizadas</span>
+              <div class="tag-group academic-card__tags">
+                <span class="tag tag--accent">TypeScript</span>
+                <span class="tag">Vite</span>
+                <span class="tag">RAG</span>
+                <span class="tag">MongoDB</span>
+              </div>
+            </div>
+            <div class="academic-card__repo">
+              <span class="academic-card__label">Repositório</span>
+              <a href="https://github.com/innocode-solutions/abp_6dsm" target="_blank" rel="noopener noreferrer">
+                github.com/innocode-solutions/abp_6dsm
+              </a>
+            </div>
+          </article>
+
+          <article class="academic-card reveal">
+            <div class="academic-card__header">
+              <span class="academic-card__semester">5DSM · 2º semestre de 2025</span>
+              <span class="project-card__role-pill">Acadêmico</span>
+            </div>
+            <div class="academic-card__title-row">
+              <h3 class="academic-card__name">Mentora</h3>
+              <span class="academic-card__award">Melhor projeto da feira</span>
+            </div>
+            <p class="academic-card__desc">
+              App para predição de desempenho e chance de evasão de alunos com base em dados
+              comportamentais, com dashboard para professores e instituições acompanharem a saúde
+              acadêmica por curso, período e professor.
+            </p>
+            <div class="academic-card__field academic-card__field--impact">
+              <span class="academic-card__label">Atuação</span>
+              <p>Product Owner no discovery, aquisição da base no Kaggle, alinhamento com o time, prototipação no Figma e codificação de telas.</p>
+            </div>
+            <div class="academic-card__tech">
+              <span class="academic-card__label">Tecnologias utilizadas</span>
+              <div class="tag-group academic-card__tags">
+                <span class="tag tag--accent">React Native</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Figma</span>
+                <span class="tag">Python</span>
+                <span class="tag">PostgreSQL</span>
+              </div>
+            </div>
+            <div class="academic-card__repo">
+              <span class="academic-card__label">Repositório</span>
+              <a href="https://github.com/innocode-solutions/abp_5dsm" target="_blank" rel="noopener noreferrer">
+                github.com/innocode-solutions/abp_5dsm
+              </a>
+            </div>
+          </article>
+
+          <article class="academic-card reveal">
+            <div class="academic-card__header">
+              <span class="academic-card__semester">4DSM · 1º semestre de 2025</span>
+              <span class="project-card__role-pill">Acadêmico</span>
+            </div>
+            <h3 class="academic-card__name">floatData</h3>
+            <p class="academic-card__desc">
+              Dispositivo de monitoramento GPS com aplicativo Android para exibição de dados em
+              tempo real, conectando coleta de localização e acompanhamento em interface mobile.
+            </p>
+            <div class="academic-card__field academic-card__field--impact">
+              <span class="academic-card__label">Atuação</span>
+              <p>Scrum Master e responsável por apoiar a consistência visual do Design System.</p>
+            </div>
+            <div class="academic-card__tech">
+              <span class="academic-card__label">Tecnologias utilizadas</span>
+              <div class="tag-group academic-card__tags">
+                <span class="tag tag--accent">React Native</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">Expo Go</span>
+                <span class="tag">IoT</span>
+                <span class="tag">C++</span>
+                <span class="tag">ESP32</span>
+                <span class="tag">PostgreSQL</span>
+              </div>
+            </div>
+            <div class="academic-card__repo">
+              <span class="academic-card__label">Repositório</span>
+              <a href="https://github.com/InnoCodeSolutions/ABP_4DSM" target="_blank" rel="noopener noreferrer">
+                github.com/InnoCodeSolutions/ABP_4DSM
+              </a>
+            </div>
+          </article>
+
+          <article class="academic-card reveal">
+            <div class="academic-card__header">
+              <span class="academic-card__semester">3DSM · 2º semestre de 2024</span>
+              <span class="project-card__role-pill">Acadêmico</span>
+            </div>
+            <h3 class="academic-card__name">Ramg.o</h3>
+            <p class="academic-card__desc">
+              Ferramenta para gestão alimentar com controle de refeições, receitas e dashboard
+              nutricional para acompanhamento de dados e organização da rotina alimentar.
+            </p>
+            <div class="academic-card__field academic-card__field--impact">
+              <span class="academic-card__label">Atuação</span>
+              <p>Desenvolvedor Front-end, atuando na construção das interfaces e da experiência de uso.</p>
+            </div>
+            <div class="academic-card__tech">
+              <span class="academic-card__label">Tecnologias utilizadas</span>
+              <div class="tag-group academic-card__tags">
+                <span class="tag tag--accent">React</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">MongoDB</span>
+              </div>
+            </div>
+            <div class="academic-card__repo">
+              <span class="academic-card__label">Repositório</span>
+              <a href="https://github.com/InnoCodeSolutions/ABP_3" target="_blank" rel="noopener noreferrer">
+                github.com/InnoCodeSolutions/ABP_3
+              </a>
+            </div>
+          </article>
+
+          <article class="academic-card reveal">
+            <div class="academic-card__header">
+              <span class="academic-card__semester">2DSM · 1º semestre de 2024</span>
+              <span class="project-card__role-pill">Acadêmico</span>
+            </div>
+            <h3 class="academic-card__name">V. Analytics</h3>
+            <p class="academic-card__desc">
+              Ferramenta de gestão para equipes de Geoprocessamento, com controle de tarefas,
+              permissões por usuário e apoio à organização operacional do time.
+            </p>
+            <div class="academic-card__field academic-card__field--impact">
+              <span class="academic-card__label">Atuação</span>
+              <p>Product Owner, responsável pela definição de requisitos e pelo contato com o cliente.</p>
+            </div>
+            <div class="academic-card__tech">
+              <span class="academic-card__label">Tecnologias utilizadas</span>
+              <div class="tag-group academic-card__tags">
+                <span class="tag tag--accent">React</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">PostgreSQL</span>
+              </div>
+            </div>
+            <div class="academic-card__repo">
+              <span class="academic-card__label">Repositório</span>
+              <a href="https://github.com/InnoCodeSolutions/V_Analytics" target="_blank" rel="noopener noreferrer">
+                github.com/InnoCodeSolutions/V_Analytics
+              </a>
+            </div>
+          </article>
+
+          <article class="academic-card reveal">
+            <div class="academic-card__header">
+              <span class="academic-card__semester">1DSM · 2º semestre de 2023</span>
+              <span class="project-card__role-pill">Acadêmico</span>
+            </div>
+            <h3 class="academic-card__name">Site sobre Scrum</h3>
+            <p class="academic-card__desc">
+              Site informativo sobre a metodologia Scrum, com módulos de ensino e testes
+              interativos para apoiar o aprendizado dos principais conceitos da metodologia.
+            </p>
+            <div class="academic-card__field academic-card__field--impact">
+              <span class="academic-card__label">Atuação</span>
+              <p>Product Owner na definição de requisitos e comunicação com o cliente.</p>
+            </div>
+            <div class="academic-card__tech">
+              <span class="academic-card__label">Tecnologias utilizadas</span>
+              <div class="tag-group academic-card__tags">
+                <span class="tag tag--accent">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+            </div>
+            <div class="academic-card__repo">
+              <span class="academic-card__label">Repositório</span>
+              <a href="https://github.com/InnoCodeSolutions/innoCodeSolutions" target="_blank" rel="noopener noreferrer">
+                github.com/InnoCodeSolutions/innoCodeSolutions
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJETOS PROFISSIONAIS ===================== -->
+    <section class="section section--alt" id="cases">
+      <div class="container">
+        <p class="section-label reveal">Projetos</p>
+        <h2 class="section-title reveal">Profissionais</h2>
+
+        <div class="cases-list professional-projects">
+
+          <article class="professional-card reveal">
+            <div class="professional-card__header">
+              <span class="professional-card__period">2º semestre de 2025</span>
+              <span class="case-impact-badge">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                  <polyline points="17 6 23 6 23 12"/>
+                </svg>
+                +50% receita incremental
+              </span>
+            </div>
+            <div class="professional-card__intro">
+              <h3 class="professional-card__name">Cross Sell de pós-compra</h3>
+              <p class="professional-card__desc">
+                Marketplace de educação com baixa penetração de produtos complementares após a compra,
+                receita por pedido estagnada e oportunidades desperdiçadas no pós-compra.
+              </p>
+            </div>
+            <div class="professional-card__field professional-card__field--impact">
+              <span class="professional-card__label">Contribuição pessoal</span>
+              <p>
+                Levamento de requisitos com stakeholders, escrita de User Stories e acompanhamento
+                do desenvolvimento durante cerimônias Scrum.
+              </p>
+            </div>
+            <div class="professional-card__tech">
+              <span class="professional-card__label">Tecnologias utilizadas</span>
+              <div class="tag-group">
+                <span class="tag tag--accent">Product Discovery</span>
+                <span class="tag">User Stories</span>
+                <span class="tag">Scrum</span>
+                <span class="tag">Jornada</span>
+                <span class="tag">Priorização</span>
+              </div>
+            </div>
+            <div class="professional-card__repo">
+              <span class="professional-card__label">Repositório</span>
+              <p>Projeto desenvolvido na empresa, sem acesso ao repositório.</p>
+            </div>
+          </article>
+
+          <article class="professional-card reveal">
+            <div class="professional-card__header">
+              <span class="professional-card__period">2º semestre de 2025</span>
+              <span class="case-impact-badge">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                  <polyline points="17 6 23 6 23 12"/>
+                </svg>
+                35 → 15 dias de reembolso
+              </span>
+            </div>
+            <div class="professional-card__intro">
+              <h3 class="professional-card__name">Automação do fluxo de reembolso</h3>
+              <p class="professional-card__desc">
+                Processo de reembolso inteiramente manual com tempo médio de 35 dias e alto volume
+                de chamados, gerando insatisfação do cliente, custo operacional e falta de rastreabilidade.
+              </p>
+            </div>
+            <div class="professional-card__field professional-card__field--impact">
+              <span class="professional-card__label">Contribuição pessoal</span>
+              <p>
+                Levamento de requisitos com stakeholders, escrita de User Stories e acompanhamento
+                do desenvolvimento durante cerimônias Scrum.
+              </p>
+            </div>
+            <div class="professional-card__tech">
+              <span class="professional-card__label">Tecnologias utilizadas</span>
+              <div class="tag-group">
+                <span class="tag tag--accent">Mapeamento de processos</span>
+                <span class="tag">User Stories</span>
+                <span class="tag">Scrum</span>
+                <span class="tag">Análise operacional</span>
+                <span class="tag">Melhoria contínua</span>
+              </div>
+            </div>
+            <div class="professional-card__repo">
+              <span class="professional-card__label">Repositório</span>
+              <p>Projeto desenvolvido na empresa, sem acesso ao repositório.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJETOS PESSOAIS ===================== -->
+    <section class="section" id="pessoais">
+      <div class="container">
+        <p class="section-label reveal">Projetos</p>
+        <h2 class="section-title reveal">Pessoais</h2>
+
+        <article class="professional-card personal-project-card reveal">
+          <div class="professional-card__header">
+            <span class="professional-card__period">Projeto pessoal</span>
+            <span class="project-card__role-pill">Pessoal</span>
+          </div>
+          <div class="professional-card__intro">
+            <h3 class="professional-card__name">Controle financeiro pessoal</h3>
+            <p class="professional-card__desc">
+              App web para controle financeiro com suporte a múltiplos usuários,
+              autenticação com Google e registro de movimentações de entrada e saída
+              por categoria.
+            </p>
+          </div>
+          <div class="professional-card__field professional-card__field--impact">
+            <span class="professional-card__label">Contribuição pessoal</span>
+            <p>
+              Desenvolvimento completo do produto, incluindo autenticação, modelagem
+              dos dados, integração com banco e envio das movimentações para Google Sheets.
+            </p>
+          </div>
+          <div class="professional-card__tech">
+            <span class="professional-card__label">Tecnologias utilizadas</span>
+            <div class="tag-group">
+              <span class="tag tag--accent">Supabase</span>
+              <span class="tag">Google Login</span>
+              <span class="tag">Google Sheets</span>
+              <span class="tag">Aplicação web</span>
+            </div>
+          </div>
+          <div class="professional-card__repo">
+            <span class="professional-card__label">Aplicação Web</span>
+              <a href="https://renda-sob-controle.lovable.app" target="_blank" rel="noopener noreferrer">
+                Renda Sob Controle
+              </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <p class="section-label reveal">Skills</p>
+        <h2 class="section-title reveal">Ferramentas e práticas</h2>
+
+        <div class="skills-grid">
+
+          <div class="skills-cat reveal">
+            <div class="skills-cat__header skills-cat__header--produto">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+              </svg>
+              <span>Produto</span>
+            </div>
+            <div class="skills-list">
+              <span class="skill-pill skill-pill--produto">Product Discovery</span>
+              <span class="skill-pill skill-pill--produto">Priorização</span>
+              <span class="skill-pill skill-pill--produto">Backlog</span>
+              <span class="skill-pill skill-pill--produto">User Stories</span>
+              <span class="skill-pill skill-pill--produto">Stakeholders</span>
+            </div>
+          </div>
+
+          <div class="skills-cat reveal">
+            <div class="skills-cat__header skills-cat__header--dados">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 3v18h18"/>
+                <rect x="7" y="12" width="3" height="5"/>
+                <rect x="12" y="8" width="3" height="9"/>
+                <rect x="17" y="5" width="3" height="12"/>
+              </svg>
+              <span>Dados</span>
+            </div>
+            <div class="skills-list">
+              <span class="skill-pill skill-pill--dados">SQL</span>
+              <span class="skill-pill skill-pill--dados">Análise</span>
+              <span class="skill-pill skill-pill--dados">Dashboards</span>
+              <span class="skill-pill skill-pill--dados">Métricas</span>
+              <span class="skill-pill skill-pill--dados">PostgreSQL</span>
+            </div>
+          </div>
+
+          <div class="skills-cat reveal">
+            <div class="skills-cat__header skills-cat__header--tech">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+              </svg>
+              <span>Base Técnica</span>
+            </div>
+            <div class="skills-list">
+              <span class="skill-pill skill-pill--tech">React</span>
+              <span class="skill-pill skill-pill--tech">TypeScript</span>
+              <span class="skill-pill skill-pill--tech">React Native</span>
+              <span class="skill-pill skill-pill--tech">Git / GitHub</span>
+              <span class="skill-pill skill-pill--tech">Figma</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTATO ===================== -->
+    <section class="section section--alt contact" id="contato">
+      <div class="container">
+        <div class="contact-inner">
+          <p class="section-label reveal">Contato</p>
+          <h2 class="contact-title reveal">Vamos conversar?</h2>
+          <p class="contact-text reveal">
+            Busco oportunidades em produto digital, discovery e dados, conectando visão de negócio,
+            experiência de usuário e execução técnica.
+          </p>
+          <div class="contact-actions reveal">
+            <a href="https://linkedin.com/in/omaurosantos" target="_blank" rel="noopener noreferrer"
+               class="btn btn--primary">LinkedIn</a>
+            <a href="https://github.com/omaurosantos/" target="_blank" rel="noopener noreferrer"
+               class="btn btn--ghost">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">mauro.</span>
+      <p class="footer-copy">
+        &copy; 2026 Mauro Santos &mdash; Todos os direitos reservados
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
 </html>
