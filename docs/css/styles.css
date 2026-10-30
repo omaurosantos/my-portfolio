@@ -310,7 +310,8 @@ ul { list-style: none; }
 }
 
 /* Botão de alternância de tema */
-.theme-toggle {
+.theme-toggle,
+.lang-toggle {
   display: grid;
   place-items: center;
   width: 36px;
@@ -324,10 +325,20 @@ ul { list-style: none; }
   flex-shrink: 0;
   transition: color var(--t), background var(--t), border-color var(--t);
 }
-.theme-toggle:hover {
+.theme-toggle:hover,
+.lang-toggle:hover {
   color: var(--accent);
   background: var(--accent-dim);
   border-color: var(--accent);
+}
+
+/* Botão de idioma: mesmo visual do tema, com o código do idioma */
+.lang-toggle {
+  width: 40px;
+  font-family: var(--font-body);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .04em;
 }
 
 /* Ícones: sol visível no dark, lua visível no light */

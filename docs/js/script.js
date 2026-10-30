@@ -41,7 +41,7 @@ const closeProjectsDropdown = () => {
 toggle.addEventListener('click', () => {
   const isOpen = menu.classList.toggle('open');
   toggle.setAttribute('aria-expanded', isOpen);
-  toggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+  toggle.setAttribute('aria-label', i18n.t(isOpen ? 'Fechar menu' : 'Abrir menu'));
 });
 
 projectsToggle.addEventListener('click', () => {
@@ -52,7 +52,7 @@ projectsToggle.addEventListener('click', () => {
 const closeMobileMenu = () => {
   menu.classList.remove('open');
   toggle.setAttribute('aria-expanded', 'false');
-  toggle.setAttribute('aria-label', 'Abrir menu');
+  toggle.setAttribute('aria-label', i18n.t('Abrir menu'));
 };
 
 // Escape fecha dropdown e menu mobile, devolvendo o foco ao botão correspondente
@@ -75,7 +75,7 @@ menu.querySelectorAll('.nav-link, .nav-dropdown__link').forEach(link => {
     if (link === projectsToggle) return;
     menu.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Abrir menu');
+    toggle.setAttribute('aria-label', i18n.t('Abrir menu'));
     closeProjectsDropdown();
   });
 });
@@ -85,7 +85,7 @@ document.addEventListener('click', e => {
   if (!navbar.contains(e.target)) {
     menu.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Abrir menu');
+    toggle.setAttribute('aria-label', i18n.t('Abrir menu'));
     closeProjectsDropdown();
   }
 });
@@ -128,3 +128,14 @@ window.addEventListener('scroll', () => {
 window.addEventListener('resize', updateActiveNav);
 updateNavbarState();
 updateActiveNav();
+
+/* =========================================
+   IDIOMA — atualiza rótulos dinâmicos
+   ========================================= */
+const updateMenuLabel = () => {
+  const isOpen = menu.classList.contains('open');
+  toggle.setAttribute('aria-label', i18n.t(isOpen ? 'Fechar menu' : 'Abrir menu'));
+};
+
+document.addEventListener('langchange', updateMenuLabel);
+updateMenuLabel(); // o i18n.js roda antes e já pode ter trocado para EN
