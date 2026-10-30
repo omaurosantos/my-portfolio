@@ -11,20 +11,49 @@
   <meta property="og:description" content="Product Owner com base técnica, foco em discovery, dados e entrega de valor.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://omaurosantos.github.io/my-portfolio/">
+  <meta property="og:image" content="https://omaurosantos.github.io/my-portfolio/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mauro Santos, Product Owner">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mauro Santos — Product Owner">
+  <meta name="twitter:description" content="Product Owner com base técnica, foco em discovery, dados e entrega de valor.">
+  <meta name="twitter:image" content="https://omaurosantos.github.io/my-portfolio/assets/og-image.png">
+
+  <link rel="canonical" href="https://omaurosantos.github.io/my-portfolio/">
+  <meta name="theme-color" content="#0D1220">
 
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 
 
-  <!-- Anti-FOUC: aplica o tema antes do paint inicial -->
+  <!-- Google Analytics -->
+  <!-- TODO: substituir G-XXXXXXXXXX pelo ID real e descomentar
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+
+  <!-- Anti-FOUC: aplica o tema antes do paint inicial; a classe js libera o reveal -->
   <script>
     (function () {
-      var t = localStorage.getItem('theme') || 'dark';
+      var t = 'dark';
+      try { t = localStorage.getItem('theme') || 'dark'; } catch (e) {}
       document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.classList.add('js');
     })();
   </script>
 </head>
 <body>
+
+  <a href="#main" class="skip-link">Ir para o conteúdo</a>
 
   <!-- ===================== NAVBAR ===================== -->
   <nav class="navbar" id="navbar">
@@ -80,7 +109,7 @@
     </div>
   </nav>
 
-  <main>
+  <main id="main">
 
     <!-- ===================== HERO ===================== -->
     <section class="hero" id="hero">
@@ -131,8 +160,11 @@
 
           <!-- Foto -->
           <div class="hero-photo">
-            <img src="assets/profile_photo.png"
-                 alt="Foto de perfil de Mauro Santos, Product Owner" />
+            <picture>
+              <source srcset="assets/profile_photo.webp" type="image/webp">
+              <img src="assets/profile_photo.png" width="900" height="1350" fetchpriority="high"
+                   alt="Foto de perfil de Mauro Santos, Product Owner" />
+            </picture>
           </div>
 
         </div><!-- /hero-layout -->

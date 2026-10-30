@@ -4,13 +4,14 @@
 const root = document.documentElement;
 
 // Lê preferência salva; padrão é dark
-const savedTheme = localStorage.getItem('theme') || 'dark';
+let savedTheme = 'dark';
+try { savedTheme = localStorage.getItem('theme') || 'dark'; } catch (e) {}
 root.setAttribute('data-theme', savedTheme);
 
 document.getElementById('theme-toggle').addEventListener('click', () => {
   const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
   root.setAttribute('data-theme', next);
-  localStorage.setItem('theme', next);
+  try { localStorage.setItem('theme', next); } catch (e) {}
 });
 
 /* =========================================
@@ -18,9 +19,9 @@ document.getElementById('theme-toggle').addEventListener('click', () => {
    ========================================= */
 const navbar = document.getElementById('navbar');
 
-window.addEventListener('scroll', () => {
+const updateNavbarState = () => {
   navbar.classList.toggle('scrolled', window.scrollY > 16);
-}, { passive: true });
+};
 
 /* =========================================
    MOBILE MENU — toggle
@@ -48,8 +49,24 @@ projectsToggle.addEventListener('click', () => {
   projectsToggle.setAttribute('aria-expanded', isOpen);
 });
 
-projectsToggle.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeProjectsDropdown();
+const closeMobileMenu = () => {
+  menu.classList.remove('open');
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-label', 'Abrir menu');
+};
+
+// Escape fecha dropdown e menu mobile, devolvendo o foco ao botão correspondente
+navbar.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  const dropdownOpen = projectsDropdown.classList.contains('open');
+  const menuOpen = menu.classList.contains('open');
+  if (!dropdownOpen && !menuOpen) return;
+  closeProjectsDropdown();
+  if (dropdownOpen && projectsDropdown.contains(document.activeElement)) projectsToggle.focus();
+  if (menuOpen) {
+    closeMobileMenu();
+    toggle.focus();
+  }
 });
 
 // Close on nav link click
@@ -104,8 +121,12 @@ const updateActiveNav = () => {
   });
 };
 
-window.addEventListener('scroll', updateActiveNav, { passive: true });
+window.addEventListener('scroll', () => {
+  updateNavbarState();
+  updateActiveNav();
+}, { passive: true });
 window.addEventListener('resize', updateActiveNav);
+updateNavbarState();
 updateActiveNav();
 
 /* =========================================

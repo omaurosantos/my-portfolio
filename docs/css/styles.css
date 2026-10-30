@@ -1174,12 +1174,12 @@ ul { list-style: none; }
 /* =========================================
    SCROLL REVEAL
    ========================================= */
-.reveal {
+.js .reveal {
   opacity: 0;
   transform: translateY(22px);
   transition: opacity 500ms ease, transform 500ms ease;
 }
-.reveal.visible {
+.js .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -1466,3 +1466,20 @@ ul { list-style: none; }
 [data-theme="dark"] .timeline-period {
   color: var(--text-600);
 }
+
+/* =========================================
+   SKIP LINK
+   ========================================= */
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -64px;
+  z-index: 1000;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: var(--bg-surface);
+  color: var(--text-900);
+  box-shadow: 0 2px 12px rgba(0,0,0,.3);
+  transition: top 150ms ease;
+}
+.skip-link:focus { top: 16px; }
