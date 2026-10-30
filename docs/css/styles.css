@@ -1224,6 +1224,7 @@ ul { list-style: none; }
 
 .hero-photo img {
   width: 100%;
+  height: auto;
   border-radius: var(--r-lg);
   box-shadow: var(--s-lg), 0 0 0 4px var(--bg-surface), 0 0 0 7px rgba(43,99,217,.22);
   display: block;
