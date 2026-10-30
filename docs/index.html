@@ -26,6 +26,10 @@
   <link rel="canonical" href="https://omaurosantos.github.io/my-portfolio/">
   <meta name="theme-color" content="#0D1220">
 
+  <!-- Fraunces: fonte dos títulos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 
@@ -39,13 +43,12 @@
     gtag('config', 'G-493MPFGNBE');
   </script>
 
-  <!-- Anti-FOUC: aplica o tema antes do paint inicial; a classe js libera o reveal -->
+  <!-- Anti-FOUC: aplica o tema antes do paint inicial -->
   <script>
     (function () {
       var t = 'dark';
       try { t = localStorage.getItem('theme') || 'dark'; } catch (e) {}
       document.documentElement.setAttribute('data-theme', t);
-      document.documentElement.classList.add('js');
     })();
   </script>
 </head>
@@ -177,13 +180,13 @@
     <!-- ===================== SOBRE ===================== -->
     <section class="section" id="sobre">
       <div class="container">
-        <p class="section-label reveal">Sobre</p>
-        <h2 class="section-title reveal">
+        <p class="section-label">Sobre</p>
+        <h2 class="section-title">
           Produto com visão de negócio<br class="br-lg"> e base técnica
         </h2>
 
         <div class="sobre-grid">
-          <div class="sobre-text reveal">
+          <div class="sobre-text">
             <p>
               Atuo em produto digital com foco em discovery, priorização e entrega de valor, transformando contextos 
               complexos em soluções orientadas por impacto.
@@ -199,7 +202,7 @@
           </div>
 
           <div class="sobre-cards">
-            <div class="info-card reveal">
+            <div class="info-card">
               <div class="info-card__icon" aria-hidden="true">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -215,7 +218,7 @@
             </div>
 
             <!-- Card atualizado: formação complementar -->
-            <div class="info-card reveal">
+            <div class="info-card">
               <div class="info-card__icon" aria-hidden="true">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -237,12 +240,12 @@
     <!-- ===================== EXPERIÊNCIA ===================== -->
     <section class="section section--alt" id="experiencia">
       <div class="container">
-        <p class="section-label reveal">Experiência</p>
-        <h2 class="section-title reveal">Trajetória profissional</h2>
+        <p class="section-label">Experiência</p>
+        <h2 class="section-title">Trajetória profissional</h2>
 
         <div class="timeline">
 
-          <div class="timeline-group reveal">
+          <div class="timeline-group">
             <p class="timeline-group__company">eCondos</p>
 
             <article class="timeline-item timeline-item--sub">
@@ -275,7 +278,7 @@
             </article>
           </div>
 
-          <div class="timeline-group reveal">
+          <div class="timeline-group">
             <p class="timeline-group__company">Qeevo Group / Quero Educação</p>
 
             <article class="timeline-item timeline-item--sub">
@@ -306,7 +309,7 @@
           </div>
 
           <!-- GasGas — duas funções, empresa citada uma só vez -->
-          <div class="timeline-group reveal">
+          <div class="timeline-group">
             <p class="timeline-group__company">GasGas Motorcycles</p>
 
             <article class="timeline-item timeline-item--sub">
@@ -361,12 +364,12 @@
     <!-- ===================== PROJETOS PROFISSIONAIS ===================== -->
     <section class="section" id="cases">
       <div class="container">
-        <p class="section-label reveal">Projetos</p>
-        <h2 class="section-title reveal">Profissionais</h2>
+        <p class="section-label">Projetos</p>
+        <h2 class="section-title">Profissionais</h2>
 
         <div class="cases-list professional-projects">
 
-          <article class="professional-card reveal">
+          <article class="professional-card">
             <div class="professional-card__header">
               <span class="professional-card__period">2º semestre de 2025</span>
             </div>
@@ -402,7 +405,7 @@
             </div>
           </article>
 
-          <article class="professional-card reveal">
+          <article class="professional-card">
             <div class="professional-card__header">
               <span class="professional-card__period">2º semestre de 2025</span>
             </div>
@@ -445,15 +448,15 @@
     <!-- ===================== PROJETOS ACADÊMICOS ===================== -->
     <section class="section section--alt" id="projetos">
       <div class="container">
-        <p class="section-label reveal">Projetos</p>
-        <h2 class="section-title reveal">Acadêmicos</h2>
+        <p class="section-label">Projetos</p>
+        <h2 class="section-title">Acadêmicos</h2>
 
-        <p class="section-intro reveal">
+        <p class="section-intro">
           ABPs desenvolvidos no curso de Desenvolvimento de Software Multiplataforma, em ordem decrescente do semestre mais recente para o primeiro projeto.
         </p>
 
         <div class="academic-projects">
-          <details class="academic-card reveal" open>
+          <details class="academic-card" open>
             <summary class="academic-card__summary">
               <span class="academic-card__semester">6DSM · 1º semestre de 2026</span>
               <div class="academic-card__title-row">
@@ -492,7 +495,7 @@
             </div>
           </details>
 
-          <details class="academic-card reveal" open>
+          <details class="academic-card" open>
             <summary class="academic-card__summary">
               <span class="academic-card__semester">5DSM · 2º semestre de 2025</span>
               <div class="academic-card__title-row">
@@ -534,7 +537,7 @@
             </div>
           </details>
 
-          <details class="academic-card reveal">
+          <details class="academic-card">
             <summary class="academic-card__summary">
               <span class="academic-card__semester">4DSM · 1º semestre de 2025</span>
               <div class="academic-card__title-row">
@@ -575,7 +578,7 @@
             </div>
           </details>
 
-          <details class="academic-card reveal">
+          <details class="academic-card">
             <summary class="academic-card__summary">
               <span class="academic-card__semester">3DSM · 2º semestre de 2024</span>
               <div class="academic-card__title-row">
@@ -612,7 +615,7 @@
             </div>
           </details>
 
-          <details class="academic-card reveal">
+          <details class="academic-card">
             <summary class="academic-card__summary">
               <span class="academic-card__semester">2DSM · 1º semestre de 2024</span>
               <div class="academic-card__title-row">
@@ -649,7 +652,7 @@
             </div>
           </details>
 
-          <details class="academic-card reveal">
+          <details class="academic-card">
             <summary class="academic-card__summary">
               <span class="academic-card__semester">1DSM · 2º semestre de 2023</span>
               <div class="academic-card__title-row">
@@ -692,10 +695,10 @@
     <!-- ===================== PROJETOS PESSOAIS ===================== -->
     <section class="section" id="pessoais">
       <div class="container">
-        <p class="section-label reveal">Projetos</p>
-        <h2 class="section-title reveal">Pessoais</h2>
+        <p class="section-label">Projetos</p>
+        <h2 class="section-title">Pessoais</h2>
 
-        <article class="professional-card personal-project-card reveal">
+        <article class="professional-card personal-project-card">
           <div class="professional-card__header">
             <span class="professional-card__period">Projeto pessoal</span>
             <span class="project-card__role-pill">Pessoal</span>
@@ -737,12 +740,12 @@
     <!-- ===================== SKILLS ===================== -->
     <section class="section" id="skills">
       <div class="container">
-        <p class="section-label reveal">Skills</p>
-        <h2 class="section-title reveal">Ferramentas e práticas</h2>
+        <p class="section-label">Skills</p>
+        <h2 class="section-title">Ferramentas e práticas</h2>
 
         <div class="skills-grid">
 
-          <div class="skills-cat reveal">
+          <div class="skills-cat">
             <div class="skills-cat__header skills-cat__header--produto">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -760,7 +763,7 @@
             </div>
           </div>
 
-          <div class="skills-cat reveal">
+          <div class="skills-cat">
             <div class="skills-cat__header skills-cat__header--dados">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -780,7 +783,7 @@
             </div>
           </div>
 
-          <div class="skills-cat reveal">
+          <div class="skills-cat">
             <div class="skills-cat__header skills-cat__header--tech">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -805,13 +808,13 @@
     <section class="section section--alt contact" id="contato">
       <div class="container">
         <div class="contact-inner">
-          <p class="section-label reveal">Contato</p>
-          <h2 class="contact-title reveal">Vamos conversar?</h2>
-          <p class="contact-text reveal">
+          <p class="section-label">Contato</p>
+          <h2 class="contact-title">Vamos conversar?</h2>
+          <p class="contact-text">
             Gosto de trocar ideias sobre produto digital, discovery e dados, conectando visão de negócio,
             experiência de usuário e execução técnica.
           </p>
-          <div class="contact-actions reveal">
+          <div class="contact-actions">
             <a href="https://linkedin.com/in/omaurosantos" target="_blank" rel="noopener noreferrer"
                class="btn btn--primary">LinkedIn</a>
             <a href="https://github.com/omaurosantos/" target="_blank" rel="noopener noreferrer"
